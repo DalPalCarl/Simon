@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqon077i4rbmn"]
+
+[ext_resource type="PackedScene" uid="uid://goqh6yn41pk1" path="res://assets/imports/BunkBeds.glb" id="1_q5pe3"]
+
+[node name="BunkBeds" instance=ExtResource("1_q5pe3")]

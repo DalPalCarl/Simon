@@ -1,0 +1,1053 @@
+[gd_scene load_steps=57 format=3 uid="uid://onmbwuntaimy"]
+
+[ext_resource type="Script" path="res://scripts/mainGame.gd" id="1_i4lp5"]
+[ext_resource type="PackedScene" uid="uid://b2uj1lcwbi3ld" path="res://scenes/memory_game.tscn" id="2_8jt08"]
+[ext_resource type="Script" path="res://scripts/MemoryGame/memory_game.gd" id="3_blsuq"]
+[ext_resource type="Script" path="res://scripts/MemoryGame/buttonGreen.gd" id="4_qpwd5"]
+[ext_resource type="Script" path="res://scripts/MemoryGame/buttonRed.gd" id="5_g3b0q"]
+[ext_resource type="Script" path="res://scripts/MemoryGame/buttonYellow.gd" id="6_di4td"]
+[ext_resource type="PackedScene" uid="uid://4j7ts2upgbcg" path="res://scenes/room.tscn" id="7_5umy3"]
+[ext_resource type="Script" path="res://scripts/MemoryGame/buttonBlue.gd" id="7_qbjxl"]
+[ext_resource type="PackedScene" uid="uid://dqon077i4rbmn" path="res://scenes/bunkBeds.tscn" id="8_tvsyg"]
+[ext_resource type="Texture2D" uid="uid://cj2lei27bwtd4" path="res://assets/imports/BunkBeds_soft-blanket_albedo.png" id="9_mfgs7"]
+[ext_resource type="PackedScene" uid="uid://cebwt4jy1lvy4" path="res://scenes/dresser.tscn" id="10_suq8l"]
+[ext_resource type="PackedScene" uid="uid://cxq26frbwq2yv" path="res://scenes/radio.tscn" id="11_i0ahn"]
+[ext_resource type="PackedScene" uid="uid://mk2gcy2l7bca" path="res://scenes/ceiling_fan.tscn" id="12_j33cc"]
+[ext_resource type="Script" path="res://scripts/ceiling_fan.gd" id="13_kxivs"]
+[ext_resource type="PackedScene" uid="uid://bhregkvsh8ust" path="res://scenes/room_closet.tscn" id="14_fed0s"]
+[ext_resource type="PackedScene" uid="uid://duxhtgy5q4im8" path="res://scenes/nightstand.tscn" id="15_1iifq"]
+[ext_resource type="PackedScene" uid="uid://cn5nsjlcxebv5" path="res://scenes/bookshelf.tscn" id="16_313h3"]
+[ext_resource type="PackedScene" uid="uid://bvikqa1xt61um" path="res://scenes/hanger_clothes_1.tscn" id="17_vli8m"]
+[ext_resource type="PackedScene" uid="uid://d0pko146fqmo7" path="res://scenes/hanger_clothes_2.tscn" id="18_ndnx3"]
+[ext_resource type="PackedScene" uid="uid://c0eyq17g6b7or" path="res://scenes/hanger_clothes_3.tscn" id="19_jnffh"]
+[ext_resource type="PackedScene" uid="uid://bukpi3uiwxcki" path="res://scenes/mvmtbuttons.tscn" id="20_edq7e"]
+[ext_resource type="PackedScene" uid="uid://cbbr20p011h35" path="res://scenes/eyelids.tscn" id="22_4yfvq"]
+[ext_resource type="AudioStream" uid="uid://dmnek4b631uuq" path="res://assets/audio/roomAmbiance.wav" id="23_bwmxv"]
+[ext_resource type="AudioStream" uid="uid://flewie6ld4hh" path="res://assets/audio/foley/footsteps/footsteps.tres" id="24_34it4"]
+[ext_resource type="AudioStream" uid="uid://d24qjx5aijcc6" path="res://assets/audio/foley/plasticUp1.wav" id="25_62dhg"]
+[ext_resource type="AudioStream" uid="uid://dv06dbsbghe1q" path="res://assets/audio/foley/plasticDown1.wav" id="26_ttqkd"]
+[ext_resource type="AudioStream" uid="uid://d32qr3ubvbjqn" path="res://assets/audio/foley/floorCrawling.wav" id="27_e2w46"]
+[ext_resource type="AudioStream" uid="uid://j6e7met0kmx1" path="res://assets/audio/foley/plasticDown3.wav" id="27_mun5v"]
+[ext_resource type="AudioStream" uid="uid://blx4jrfyh4d15" path="res://assets/audio/foley/blanketShuffle1.wav" id="29_uhixd"]
+[ext_resource type="AudioStream" uid="uid://owioiwlsdwdb" path="res://assets/audio/foley/blanketShuffle2.wav" id="30_a7xue"]
+[ext_resource type="AudioStream" uid="uid://nc0un5bjylct" path="res://assets/audio/foley/hangers.wav" id="31_4wf55"]
+[ext_resource type="AudioStream" uid="uid://8gxu0pbc08o8" path="res://assets/audio/foley/breakIn.wav" id="32_80mhy"]
+[ext_resource type="AudioStream" uid="uid://dtgugb0bru4xf" path="res://assets/audio/foley/doorOpenClose.wav" id="33_etqvg"]
+[ext_resource type="PackedScene" uid="uid://ddyxganuc6ty" path="res://scenes/monster.tscn" id="34_iopua"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_unriy"]
+albedo_color = Color(0.502817, 0.663302, 1, 1)
+albedo_texture = ExtResource("9_mfgs7")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_73x07"]
+albedo_color = Color(1, 0.0405029, 0.0223527, 1)
+albedo_texture = ExtResource("9_mfgs7")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pexgn"]
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 4.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_07riu"]
+albedo_color = Color(0.103744, 0.103744, 0.103744, 1)
+metallic_specular = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_juwfi"]
+albedo_color = Color(0, 0.305882, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fn1jd"]
+albedo_color = Color(0.103744, 0.103744, 0.103744, 1)
+metallic_specular = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bjr64"]
+albedo_color = Color(0, 0, 0.388235, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ivwfu"]
+albedo_color = Color(0.103744, 0.103744, 0.103744, 1)
+metallic_specular = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lb4gd"]
+albedo_color = Color(0, 0.619608, 1, 1)
+
+[sub_resource type="Environment" id="Environment_g5vk5"]
+background_mode = 3
+reflected_light_source = 1
+tonemap_exposure = 0.2
+tonemap_white = 13.56
+glow_enabled = true
+glow_strength = 2.0
+fog_enabled = true
+fog_light_energy = 1.84
+fog_density = 0.0
+volumetric_fog_density = 0.6576
+volumetric_fog_albedo = Color(0.237539, 0.237539, 0.237539, 1)
+
+[sub_resource type="Animation" id="Animation_pqiha"]
+resource_name = "Bed_to_Bookshelf"
+length = 5.2
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("footsteps")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.1,
+"start_offset": 0.0,
+"stream": ExtResource("25_62dhg")
+}, {
+"end_offset": 0.0,
+"start_offset": 1.12,
+"stream": ExtResource("27_e2w46")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 0.05,
+"start_offset": 0.0,
+"stream": ExtResource("26_ttqkd")
+}],
+"times": PackedFloat32Array(0.2, 0.7, 2.6, 2.8, 3, 3.2, 3.4, 3.6, 3.8, 4, 4.2, 4.7)
+}
+tracks/0/use_blend = true
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("footsteps")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("30_a7xue")
+}],
+"times": PackedFloat32Array(0.5)
+}
+tracks/1/use_blend = true
+
+[sub_resource type="Animation" id="Animation_x6gca"]
+resource_name = "Bed_to_Closet"
+length = 6.7
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("footsteps")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.1,
+"start_offset": 0.0,
+"stream": ExtResource("25_62dhg")
+}, {
+"end_offset": 0.0,
+"start_offset": 1.12,
+"stream": ExtResource("27_e2w46")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 1.98,
+"start_offset": 0.17,
+"stream": ExtResource("27_e2w46")
+}, {
+"end_offset": 0.05,
+"start_offset": 0.0,
+"stream": ExtResource("26_ttqkd")
+}],
+"times": PackedFloat32Array(0.2, 0.7, 2.6, 2.8, 3, 3.2, 3.4, 3.6, 3.8, 4, 4.2, 4.57, 6.2)
+}
+tracks/0/use_blend = true
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("footsteps")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("30_a7xue")
+}, {
+"end_offset": 0.34,
+"start_offset": 0.0,
+"stream": ExtResource("31_4wf55")
+}],
+"times": PackedFloat32Array(0.5, 4.9)
+}
+tracks/1/use_blend = true
+
+[sub_resource type="Animation" id="Animation_vcj04"]
+resource_name = "Bookshelf_to_Bed"
+length = 5.0
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("footsteps")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.05,
+"start_offset": 0.0,
+"stream": ExtResource("25_62dhg")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 0.9,
+"start_offset": 0.18,
+"stream": ExtResource("27_e2w46")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("27_mun5v")
+}],
+"times": PackedFloat32Array(0.2, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.9, 4.2)
+}
+tracks/0/use_blend = true
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("footsteps")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.45,
+"stream": ExtResource("29_uhixd")
+}],
+"times": PackedFloat32Array(2.55)
+}
+tracks/1/use_blend = true
+
+[sub_resource type="Animation" id="Animation_g4677"]
+resource_name = "Bookshelf_to_Corner"
+length = 3.7
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("footsteps")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.05,
+"start_offset": 0.0,
+"stream": ExtResource("25_62dhg")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("27_mun5v")
+}],
+"times": PackedFloat32Array(0.2, 0.7, 0.9, 1.1, 1.3, 1.5, 1.7, 1.9, 2.1, 2.3, 2.5, 3.2)
+}
+tracks/0/use_blend = true
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("footsteps")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [],
+"times": PackedFloat32Array()
+}
+tracks/1/use_blend = true
+
+[sub_resource type="Animation" id="Animation_kef8l"]
+resource_name = "Closet_to_Bed"
+length = 7.0
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("footsteps")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.05,
+"start_offset": 0.0,
+"stream": ExtResource("25_62dhg")
+}, {
+"end_offset": 0.9,
+"start_offset": 0.18,
+"stream": ExtResource("27_e2w46")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 0.9,
+"start_offset": 0.18,
+"stream": ExtResource("27_e2w46")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("27_mun5v")
+}],
+"times": PackedFloat32Array(0.2, 0.5, 2.4, 2.6, 2.8, 3, 3.2, 3.4, 3.6, 3.8, 4, 4.3, 6.6)
+}
+tracks/0/use_blend = true
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("footsteps")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("31_4wf55")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.45,
+"stream": ExtResource("29_uhixd")
+}],
+"times": PackedFloat32Array(0.3, 5)
+}
+tracks/1/use_blend = true
+
+[sub_resource type="Animation" id="Animation_flg0p"]
+resource_name = "Closet_to_Corner"
+length = 5.0
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("footsteps")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("25_62dhg")
+}, {
+"end_offset": 1.84,
+"start_offset": 0.0,
+"stream": ExtResource("27_e2w46")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("27_mun5v")
+}],
+"times": PackedFloat32Array(0.3, 0.8, 2.1, 2.3, 2.5, 2.7, 2.9, 3.1, 3.3, 3.5, 3.7, 4.2)
+}
+tracks/0/use_blend = true
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("footsteps")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("31_4wf55")
+}],
+"times": PackedFloat32Array(0.3)
+}
+tracks/1/use_blend = true
+
+[sub_resource type="Animation" id="Animation_tym3h"]
+resource_name = "Corner_to_Bookshelf"
+length = 3.0
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("footsteps")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("25_62dhg")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("26_ttqkd")
+}],
+"times": PackedFloat32Array(0.1, 0.29, 0.49, 0.69, 0.89, 1.09, 1.29, 1.49, 1.69, 1.89, 2.09, 2.29, 2.49, 2.8)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="Animation_kkn0p"]
+resource_name = "Corner_to_Closet"
+length = 5.0
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("footsteps")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("25_62dhg")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_34it4")
+}, {
+"end_offset": 1.19,
+"start_offset": 0.0,
+"stream": ExtResource("27_e2w46")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("26_ttqkd")
+}],
+"times": PackedFloat32Array(0.2, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2, 2.2, 2.5, 4.5)
+}
+tracks/0/use_blend = true
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("footsteps")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("31_4wf55")
+}],
+"times": PackedFloat32Array(3.2)
+}
+tracks/1/use_blend = true
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1n7mi"]
+_data = {
+"Bed_to_Bookshelf": SubResource("Animation_pqiha"),
+"Bed_to_Closet": SubResource("Animation_x6gca"),
+"Bookshelf_to_Bed": SubResource("Animation_vcj04"),
+"Bookshelf_to_Corner": SubResource("Animation_g4677"),
+"Closet_to_Bed": SubResource("Animation_kef8l"),
+"Closet_to_Corner": SubResource("Animation_flg0p"),
+"Corner_to_Bookshelf": SubResource("Animation_tym3h"),
+"Corner_to_Closet": SubResource("Animation_kkn0p")
+}
+
+[sub_resource type="Animation" id="Animation_go61w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CeilingLight:light_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [3.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CeilingFan/Light:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_ncpg0"]
+resource_name = "flicker_lights_off"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CeilingLight:light_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [3.0, 0.5, 3.0, 0.5, 3.0, 0.4, 3.0, 0.4, 3.0, 0.3, 3.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CeilingFan/Light:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dvcws"]
+_data = {
+"RESET": SubResource("Animation_go61w"),
+"flicker_lights_off": SubResource("Animation_ncpg0")
+}
+
+[node name="World" type="Node3D"]
+script = ExtResource("1_i4lp5")
+
+[node name="Eyelids" parent="." instance=ExtResource("22_4yfvq")]
+
+[node name="ColorRect" parent="Eyelids" index="0"]
+offset_right = -768.0
+
+[node name="ColorRect2" parent="Eyelids" index="1"]
+offset_top = 216.0
+offset_right = 1152.0
+offset_bottom = 216.0
+
+[node name="MemoryGame" parent="." instance=ExtResource("2_8jt08")]
+transform = Transform3D(-0.999962, 0, -0.00872664, 0, 1, 0, 0.00872664, 0, -0.999962, -5.95377, 0.0632944, 8.42009)
+script = ExtResource("3_blsuq")
+
+[node name="buttonGreen" parent="MemoryGame" index="1"]
+script = ExtResource("4_qpwd5")
+
+[node name="buttonRed" parent="MemoryGame" index="2"]
+script = ExtResource("5_g3b0q")
+
+[node name="buttonYellow" parent="MemoryGame" index="3"]
+script = ExtResource("6_di4td")
+
+[node name="buttonBlue" parent="MemoryGame" index="4"]
+script = ExtResource("7_qbjxl")
+
+[node name="Center" parent="MemoryGame" index="5"]
+transform = Transform3D(-0.0195264, 0, -1.30385e-08, 0, 0.0195264, 0, 6.51926e-09, 0, -0.0433372, -0.0757208, 0.159126, 0.13404)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="MemoryGame"]
+transform = Transform3D(0.00872659, -0.931218, 0.364359, -1.21887e-07, 0.364373, 0.931253, -0.999962, -0.00812671, 0.00317962, 0.425311, 1.44023, -0.0358562)
+spot_range = 1.786
+spot_attenuation = 2.54912
+
+[node name="BackCornerCam" type="Camera3D" parent="."]
+transform = Transform3D(0.751656, -0.0292294, 0.658908, 1.49012e-08, 0.999018, 0.0443168, -0.659556, -0.033311, 0.750917, 8.87412, 1.22898, 9.122)
+fov = 71.0805
+
+[node name="BookshelfCam" type="Camera3D" parent="."]
+transform = Transform3D(-0.719049, -0.0307984, 0.694277, 1.87583e-08, 0.999018, 0.0443168, -0.69496, 0.0318659, -0.718342, 10.5487, 1.22898, -7.80127)
+fov = 71.0805
+
+[node name="BedCam" type="Camera3D" parent="."]
+transform = Transform3D(-0.69496, 0.031866, -0.718342, 1.7419e-08, 0.999018, 0.0443168, 0.719049, 0.0307984, -0.694277, -5.33857, 0.667289, -7.00767)
+fov = 71.0805
+
+[node name="ClosetCam" type="Camera3D" parent="."]
+transform = Transform3D(0.0164998, 0.291047, -0.956567, -0.00423058, 0.956709, 0.291017, 0.999855, -0.000754888, 0.0170168, -8.13511, 1.53305, 8.30093)
+fov = 71.0805
+
+[node name="Room" parent="." instance=ExtResource("7_5umy3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
+
+[node name="Door" parent="Room" index="1"]
+transform = Transform3D(1.63061, 0, 0.00492639, 0, 2.77329, 0, -0.0783534, 0, 0.102522, -0.538276, 3.53835, -10.1311)
+
+[node name="BunkBeds" parent="." instance=ExtResource("8_tvsyg")]
+transform = Transform3D(-9.05372e-08, 0, 2.07125, 0, 2.07125, 0, -2.07125, 0, -9.05372e-08, -4.34181, 1.20906, -6.50661)
+
+[node name="blanket1" parent="BunkBeds" index="7"]
+transform = Transform3D(1, 0, 1.42109e-14, 0, 0.0150806, 0, 0, 0, 1.648, 0, 0.245737, 0.410513)
+surface_material_override/0 = SubResource("StandardMaterial3D_unriy")
+
+[node name="blanket2" parent="BunkBeds" index="11"]
+transform = Transform3D(1, 0, 7.10543e-15, 0, 0.0150806, 0, 0, 0, 1.648, 0, 1.8703, 0.410513)
+surface_material_override/0 = SubResource("StandardMaterial3D_73x07")
+
+[node name="dresser" parent="." instance=ExtResource("10_suq8l")]
+transform = Transform3D(0.52845, 0, 0, 0, 0.52845, 0, 0, 0, 0.52845, -7.60807, 2.38419e-07, 2.68342)
+
+[node name="Radio" parent="." instance=ExtResource("11_i0ahn")]
+transform = Transform3D(0.070786, 0, -0.344111, 0, 0.351316, 0, 0.344111, 0, 0.070786, 3.85886, 0.396725, -1.21404)
+
+[node name="CeilingFan" parent="." instance=ExtResource("12_j33cc")]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -1.7633, 7.86854, -1.83641)
+script = ExtResource("13_kxivs")
+
+[node name="Light" parent="CeilingFan" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_pexgn")
+
+[node name="CeilingLight" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.81336, 6.28143, -1.92644)
+light_energy = 3.0
+omni_range = 37.9933
+
+[node name="RoomCloset" parent="." instance=ExtResource("14_fed0s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.30491, 0, 1.0108)
+
+[node name="nightstand2" parent="." instance=ExtResource("15_1iifq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.71048, -0.094566, -1.84892)
+
+[node name="bookshelf" parent="." instance=ExtResource("16_313h3")]
+transform = Transform3D(-2.51401e-08, 0, -0.483055, 0, 0.575139, 0, 0.575139, 0, -2.1115e-08, 7.40376, 0.0994225, -8.35776)
+
+[node name="ClosetItems" type="Node3D" parent="."]
+
+[node name="hangerClothes_1" parent="ClosetItems" instance=ExtResource("17_vli8m")]
+transform = Transform3D(-1.77764e-08, 0, -0.406677, 0, 0.406677, 0, 0.406677, 0, -1.77764e-08, -7.08607, 0.407177, 9.55074)
+
+[node name="hanger" parent="ClosetItems/hangerClothes_1" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_07riu")
+
+[node name="shirt" parent="ClosetItems/hangerClothes_1" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_juwfi")
+
+[node name="hangerClothes_2" parent="ClosetItems" instance=ExtResource("18_ndnx3")]
+transform = Transform3D(-1.96888e-08, 0, -0.450428, 0, 0.450428, 0, 0.450428, 0, -1.96888e-08, -7.116, -0.03982, 9.32429)
+
+[node name="hanger_001" parent="ClosetItems/hangerClothes_2" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_fn1jd")
+
+[node name="Cube" parent="ClosetItems/hangerClothes_2" index="1"]
+transform = Transform3D(0.126069, 0, 7.10543e-15, 0, 0.286742, 0, 0, 0, 1.49428, -0.00587082, 7.17519, -0.0158119)
+surface_material_override/0 = SubResource("StandardMaterial3D_bjr64")
+
+[node name="hangerClothes_3" parent="ClosetItems" instance=ExtResource("19_jnffh")]
+transform = Transform3D(-1.95293e-08, 0, -0.446778, 0, 0.446778, 0, 0.446778, 0, -1.95293e-08, -7.10239, 0, 8.90115)
+
+[node name="hanger_002" parent="ClosetItems/hangerClothes_3" index="0"]
+transform = Transform3D(0.112563, 0, 0, 0, 1, 0, 0, 0, 0.112563, -0.00587082, 9.772, 0.420212)
+surface_material_override/0 = SubResource("StandardMaterial3D_ivwfu")
+
+[node name="Cube" parent="ClosetItems/hangerClothes_3" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_lb4gd")
+
+[node name="MButtons" parent="." instance=ExtResource("20_edq7e")]
+
+[node name="CornerPositions" type="Node3D" parent="."]
+
+[node name="Bookshelf" type="Node3D" parent="CornerPositions"]
+transform = Transform3D(0.641061, -0.0334774, 0.766759, -1.33987e-09, 0.999048, 0.0436194, -0.76749, -0.0279627, 0.640451, 9.18661, 0.130646, -6.1809)
+
+[node name="Closet" type="Node3D" parent="CornerPositions"]
+transform = Transform3D(-0.999962, 0, -0.00872664, 0, 1, 0, 0.00872664, 0, -0.999962, -5.95377, 0.0632944, 8.42009)
+
+[node name="Bed" type="Node3D" parent="CornerPositions"]
+transform = Transform3D(-0.708739, -0.0817156, 0.700723, -0.114538, 0.993419, 7.86585e-08, -0.696111, -0.0802596, -0.713434, -4.1059, 0.0902342, -5.77602)
+
+[node name="BackCorner" type="Node3D" parent="CornerPositions"]
+transform = Transform3D(0.677786, 0.0437711, -0.733955, -0.0644452, 0.997921, 5.8797e-08, 0.73243, 0.0472998, 0.679198, 7.30208, 0.130646, 7.39737)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_g5vk5")
+
+[node name="ambiance" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.24267, 0)
+stream = ExtResource("23_bwmxv")
+attenuation_model = 2
+autoplay = true
+
+[node name="footsteps" type="AudioStreamPlayer" parent="."]
+
+[node name="plasticUp" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("24_34it4")
+
+[node name="plasticDown" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("24_34it4")
+
+[node name="bedFabric" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("24_34it4")
+
+[node name="playerSounds" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_1n7mi")
+}
+
+[node name="Breakin" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.0679, 0, -21.056)
+stream = ExtResource("32_80mhy")
+volume_db = 4.571
+
+[node name="DoorOpenClose" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.70217, 0, -8.92009)
+stream = ExtResource("33_etqvg")
+attenuation_model = 2
+volume_db = 4.0
+unit_size = 5.0
+pitch_scale = 0.77
+
+[node name="introTimer" type="Timer" parent="."]
+wait_time = 53.0
+one_shot = true
+
+[node name="Environment" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_dvcws")
+}
+
+[node name="monster5backup" parent="." instance=ExtResource("34_iopua")]
+transform = Transform3D(0.0825618, 0, 0.030475, 0, 0.0880067, 0, -0.030475, 0, 0.0825618, -7.56966, -0.384909, 0.752285)
+
+[node name="Skeleton3D" parent="monster5backup/Armature" index="0"]
+bones/0/position = Vector3(-0.716811, -2.13884, 0)
+bones/0/rotation = Quaternion(0, 0, 0, 1)
+bones/1/rotation = Quaternion(0, 0, 0, 1)
+bones/2/rotation = Quaternion(0, 1.19209e-07, 0, 1)
+bones/3/rotation = Quaternion(0, 7.10543e-15, 0, 1)
+bones/4/rotation = Quaternion(0, 0, 0, 1)
+bones/5/rotation = Quaternion(-0.531438, 0.182337, -0.741853, 0.366033)
+bones/6/rotation = Quaternion(0.69263, -0.108351, 0.155106, 0.696036)
+bones/7/rotation = Quaternion(0.718225, -0.00785377, -0.00188628, 0.695764)
+bones/8/rotation = Quaternion(0.0751874, -0.18414, 0.547169, 0.813047)
+bones/9/rotation = Quaternion(0.00789617, 0.0099674, -0.0036609, 0.999912)
+bones/10/rotation = Quaternion(-0.0044163, -0.00112474, 0.00216379, 0.999987)
+bones/12/rotation = Quaternion(-0.300148, 0.00793076, 0.57542, 0.76075)
+bones/13/rotation = Quaternion(0.1929, 0.0643565, -0.578922, 0.789618)
+bones/14/rotation = Quaternion(0.39417, 0.0457637, -0.396291, 0.827943)
+bones/16/rotation = Quaternion(-0.300148, -0.00793072, -0.575419, 0.76075)
+bones/17/rotation = Quaternion(0.1929, -0.0643565, 0.578922, 0.789618)
+bones/18/rotation = Quaternion(0.39417, -0.0457637, 0.396291, 0.827943)
+bones/19/position = Vector3(-0.135809, -3.66031, 1.32332)
+bones/19/rotation = Quaternion(-0.5, 0.5, 0.5, -0.5)
+bones/20/position = Vector3(-0.188761, -5.52023, 0.0260122)
+bones/20/rotation = Quaternion(-0.507065, -0.492834, 0.492834, 0.507065)
+bones/22/position = Vector3(0.24892, 0.946963, -1.82011)
+bones/22/rotation = Quaternion(-0.505485, 0.494455, -0.494455, 0.505485)
+bones/23/position = Vector3(0.821649, 2.42346, 0.493103)
+bones/23/rotation = Quaternion(0.522422, 0.0931553, 0.846101, 0.0501026)
+bones/25/position = Vector3(-1.29781, -3.66031, 1.32332)
+bones/25/rotation = Quaternion(0.5, 0.5, 0.5, 0.5)
+bones/26/position = Vector3(-1.24486, -5.52023, 0.0260122)
+bones/26/rotation = Quaternion(-0.507065, 0.492834, -0.492834, 0.507065)
+bones/28/position = Vector3(-3.84315, 3.6211, -1.82011)
+bones/28/rotation = Quaternion(-0.505485, -0.494455, 0.494455, 0.505485)
+bones/29/position = Vector3(-5.54201, 3.6211, -0.368086)
+bones/29/rotation = Quaternion(-0.499995, -0.500005, 0.500005, 0.499995)
+
+[node name="AnimationPlayer" parent="monster5backup" index="2"]
+autoplay = "OnBed"
+
+[node name="MonsterLocations" type="Node3D" parent="."]
+
+[node name="Bed_topbunk" type="Node3D" parent="MonsterLocations"]
+transform = Transform3D(0.256087, 0, 0.966654, 0, 1, 0, -0.966654, 0, 0.256087, -3.99585, 5.02856, -6.87646)
+
+[node name="Closet" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.95707, 0, 8.38151)
+
+[node name="BackCorner" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.2898, 0, 10.1465)
+
+[node name="Bed" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.19603, 2.58146, -6.48565)
+
+[node name="Bookshelf" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.62245, 0, -7.15944)
+
+[connection signal="hideMButtons" from="MemoryGame" to="MButtons" method="_on_hide_m_buttons"]
+[connection signal="showMButtons" from="MemoryGame" to="MButtons" method="_on_show_m_buttons"]
+[connection signal="greenPressed" from="MemoryGame/buttonGreen" to="MemoryGame" method="_on_button_green_green_pressed"]
+[connection signal="mouse_entered" from="MemoryGame/buttonGreen/Area3D" to="MemoryGame/buttonGreen" method="_on_area_3d_mouse_entered"]
+[connection signal="mouse_exited" from="MemoryGame/buttonGreen/Area3D" to="MemoryGame/buttonGreen" method="_on_area_3d_mouse_exited"]
+[connection signal="redPressed" from="MemoryGame/buttonRed" to="MemoryGame" method="_on_button_red_red_pressed"]
+[connection signal="mouse_entered" from="MemoryGame/buttonRed/Area3D" to="MemoryGame/buttonRed" method="_on_area_3d_mouse_entered"]
+[connection signal="mouse_exited" from="MemoryGame/buttonRed/Area3D" to="MemoryGame/buttonRed" method="_on_area_3d_mouse_exited"]
+[connection signal="yellowPressed" from="MemoryGame/buttonYellow" to="MemoryGame" method="_on_button_yellow_yellow_pressed"]
+[connection signal="mouse_entered" from="MemoryGame/buttonYellow/Area3D" to="MemoryGame/buttonYellow" method="_on_area_3d_mouse_entered"]
+[connection signal="mouse_exited" from="MemoryGame/buttonYellow/Area3D" to="MemoryGame/buttonYellow" method="_on_area_3d_mouse_exited"]
+[connection signal="bluePressed" from="MemoryGame/buttonBlue" to="MemoryGame" method="_on_button_blue_blue_pressed"]
+[connection signal="mouse_entered" from="MemoryGame/buttonBlue/Area3D" to="MemoryGame/buttonBlue" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="MemoryGame/buttonBlue/Area3D" to="MemoryGame/buttonBlue" method="_on_area_3d_mouse_exited"]
+[connection signal="animation_started" from="MemoryGame/AnimationPlayer" to="." method="_on_animation_player_animation_started"]
+[connection signal="pressed" from="MButtons/Left" to="." method="_on_left_pressed"]
+[connection signal="pressed" from="MButtons/Right" to="." method="_on_right_pressed"]
+[connection signal="animation_finished" from="playerSounds" to="." method="_on_player_sounds_animation_finished"]
+[connection signal="timeout" from="introTimer" to="." method="_on_intro_timer_timeout"]
+
+[editable path="Eyelids"]
+[editable path="MemoryGame"]
+[editable path="Room"]
+[editable path="BunkBeds"]
+[editable path="CeilingFan"]
+[editable path="ClosetItems/hangerClothes_1"]
+[editable path="ClosetItems/hangerClothes_2"]
+[editable path="ClosetItems/hangerClothes_3"]
+[editable path="MButtons"]
+[editable path="monster5backup"]
