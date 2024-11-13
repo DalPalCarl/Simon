@@ -1,0 +1,6 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://0dmgiw4d0e7"]
+
+[ext_resource type="FontFile" uid="uid://b08nli31i5uvk" path="res://assets/fonts/Chakra.ttf" id="1_8fbqm"]
+
+[resource]
+Button/fonts/font = ExtResource("1_8fbqm")

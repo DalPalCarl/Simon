@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtrldssrjkoj2"]
+
+[ext_resource type="PackedScene" uid="uid://bnvr8jh0603gu" path="res://assets/imports/nightstand_2.glb" id="1_lfpby"]
+
+[node name="nightstand_2" instance=ExtResource("1_lfpby")]
+
+[node name="Furniture_DeskDrawers_2" parent="." index="0"]
+transform = Transform3D(-1.19209e-07, 0, 1, 0, 1, 0, -1, 0, -1.19209e-07, 0.0818861, 0.777462, 0.0146473)

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxq26frbwq2yv"]
+
+[ext_resource type="PackedScene" uid="uid://bfo2dqi0d4tnd" path="res://assets/imports/Radio.glb" id="1_2qsh0"]
+[ext_resource type="AudioStream" uid="uid://b11fybuckwrgo" path="res://assets/audio/radio.ogg" id="2_qc8qy"]
+
+[node name="Radio" instance=ExtResource("1_2qsh0")]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="3"]
+stream = ExtResource("2_qc8qy")
+attenuation_model = 1
+autoplay = true
+max_distance = 39.01
+doppler_tracking = 1

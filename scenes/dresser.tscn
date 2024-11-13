@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cebwt4jy1lvy4"]
+
+[ext_resource type="PackedScene" uid="uid://qc3d6qnunwm1" path="res://assets/imports/dresser.glb" id="1_4h3nw"]
+
+[node name="dresser" instance=ExtResource("1_4h3nw")]

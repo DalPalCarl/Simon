@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bsn74b4kxy1wg"]
+
+[ext_resource type="PackedScene" uid="uid://cu1koifiiaphp" path="res://assets/imports/dresser_2.glb" id="1_fh6ul"]
+
+[node name="dresser_2" instance=ExtResource("1_fh6ul")]
+
+[node name="Furniture_Cabinet_6_Drawers_5" parent="." index="0"]
+transform = Transform3D(-1.19209e-07, 0, 1, 0, 1, 0, -1, 0, -1.19209e-07, 0, 0.754137, 0)

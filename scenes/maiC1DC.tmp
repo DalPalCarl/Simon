@@ -1,0 +1,249 @@
+[gd_scene load_steps=33 format=3 uid="uid://onmbwuntaimy"]
+
+[ext_resource type="Script" path="res://scripts/mainGame.gd" id="1_i4lp5"]
+[ext_resource type="PackedScene" uid="uid://b2uj1lcwbi3ld" path="res://scenes/memory_game.tscn" id="2_8jt08"]
+[ext_resource type="Script" path="res://scripts/MemoryGame/memory_game.gd" id="3_blsuq"]
+[ext_resource type="Script" path="res://scripts/MemoryGame/buttonGreen.gd" id="4_qpwd5"]
+[ext_resource type="Script" path="res://scripts/MemoryGame/buttonRed.gd" id="5_g3b0q"]
+[ext_resource type="Script" path="res://scripts/MemoryGame/buttonYellow.gd" id="6_di4td"]
+[ext_resource type="PackedScene" uid="uid://4j7ts2upgbcg" path="res://scenes/room.tscn" id="7_5umy3"]
+[ext_resource type="Script" path="res://scripts/MemoryGame/buttonBlue.gd" id="7_qbjxl"]
+[ext_resource type="PackedScene" uid="uid://dqon077i4rbmn" path="res://scenes/bunkBeds.tscn" id="8_tvsyg"]
+[ext_resource type="Texture2D" uid="uid://cj2lei27bwtd4" path="res://assets/imports/BunkBeds_soft-blanket_albedo.png" id="9_mfgs7"]
+[ext_resource type="PackedScene" uid="uid://cebwt4jy1lvy4" path="res://scenes/dresser.tscn" id="10_suq8l"]
+[ext_resource type="PackedScene" uid="uid://cxq26frbwq2yv" path="res://scenes/radio.tscn" id="11_i0ahn"]
+[ext_resource type="PackedScene" uid="uid://mk2gcy2l7bca" path="res://scenes/ceiling_fan.tscn" id="12_j33cc"]
+[ext_resource type="Script" path="res://scripts/ceiling_fan.gd" id="13_kxivs"]
+[ext_resource type="PackedScene" uid="uid://bhregkvsh8ust" path="res://scenes/room_closet.tscn" id="14_fed0s"]
+[ext_resource type="PackedScene" uid="uid://duxhtgy5q4im8" path="res://scenes/nightstand.tscn" id="15_1iifq"]
+[ext_resource type="PackedScene" uid="uid://cn5nsjlcxebv5" path="res://scenes/bookshelf.tscn" id="16_313h3"]
+[ext_resource type="PackedScene" uid="uid://bvikqa1xt61um" path="res://scenes/hanger_clothes_1.tscn" id="17_vli8m"]
+[ext_resource type="PackedScene" uid="uid://d0pko146fqmo7" path="res://scenes/hanger_clothes_2.tscn" id="18_ndnx3"]
+[ext_resource type="PackedScene" uid="uid://c0eyq17g6b7or" path="res://scenes/hanger_clothes_3.tscn" id="19_jnffh"]
+[ext_resource type="PackedScene" uid="uid://bukpi3uiwxcki" path="res://scenes/mvmtbuttons.tscn" id="20_edq7e"]
+[ext_resource type="PackedScene" uid="uid://cbbr20p011h35" path="res://scenes/eyelids.tscn" id="22_4yfvq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_unriy"]
+albedo_color = Color(0.502817, 0.663302, 1, 1)
+albedo_texture = ExtResource("9_mfgs7")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_73x07"]
+albedo_color = Color(1, 0.0405029, 0.0223527, 1)
+albedo_texture = ExtResource("9_mfgs7")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pexgn"]
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 4.24
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_07riu"]
+albedo_color = Color(0.103744, 0.103744, 0.103744, 1)
+metallic_specular = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_juwfi"]
+albedo_color = Color(0, 0.305882, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fn1jd"]
+albedo_color = Color(0.103744, 0.103744, 0.103744, 1)
+metallic_specular = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bjr64"]
+albedo_color = Color(0, 0, 0.388235, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ivwfu"]
+albedo_color = Color(0.103744, 0.103744, 0.103744, 1)
+metallic_specular = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lb4gd"]
+albedo_color = Color(0, 0.619608, 1, 1)
+
+[sub_resource type="Environment" id="Environment_g5vk5"]
+background_mode = 3
+reflected_light_source = 1
+tonemap_exposure = 0.2
+tonemap_white = 13.56
+glow_enabled = true
+glow_strength = 2.0
+fog_enabled = true
+fog_light_energy = 1.84
+fog_density = 0.0
+volumetric_fog_density = 0.6576
+volumetric_fog_albedo = Color(0.237539, 0.237539, 0.237539, 1)
+
+[node name="World" type="Node3D"]
+script = ExtResource("1_i4lp5")
+
+[node name="Eyelids" parent="." instance=ExtResource("22_4yfvq")]
+
+[node name="ColorRect" parent="Eyelids" index="0"]
+offset_right = 0.0
+
+[node name="ColorRect2" parent="Eyelids" index="1"]
+offset_top = 0.0
+offset_right = 1152.0
+offset_bottom = 324.0
+
+[node name="AnimationPlayer" parent="Eyelids" index="2"]
+reset_on_save = false
+
+[node name="MemoryGame" parent="." instance=ExtResource("2_8jt08")]
+transform = Transform3D(-0.999962, 0, -0.00872664, 0, 1, 0, 0.00872664, 0, -0.999962, -5.95377, 0.0632944, 8.42009)
+script = ExtResource("3_blsuq")
+
+[node name="buttonGreen" parent="MemoryGame" index="1"]
+script = ExtResource("4_qpwd5")
+
+[node name="buttonRed" parent="MemoryGame" index="2"]
+script = ExtResource("5_g3b0q")
+
+[node name="buttonYellow" parent="MemoryGame" index="3"]
+script = ExtResource("6_di4td")
+
+[node name="buttonBlue" parent="MemoryGame" index="4"]
+script = ExtResource("7_qbjxl")
+
+[node name="Center" parent="MemoryGame" index="5"]
+transform = Transform3D(-0.0195264, 0, -1.30385e-08, 0, 0.0195264, 0, 6.51926e-09, 0, -0.0433372, -0.0757208, 0.159126, 0.13404)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="MemoryGame"]
+transform = Transform3D(0.00872659, -0.931218, 0.364359, -1.21887e-07, 0.364373, 0.931253, -0.999962, -0.00812671, 0.00317962, 0.425311, 1.44023, -0.0358562)
+spot_range = 1.786
+spot_attenuation = 2.54912
+
+[node name="BackCornerCam" type="Camera3D" parent="."]
+transform = Transform3D(0.751656, -0.0292294, 0.658908, 1.49012e-08, 0.999018, 0.0443168, -0.659556, -0.033311, 0.750917, 8.87412, 1.22898, 9.122)
+fov = 71.0805
+
+[node name="BookshelfCam" type="Camera3D" parent="."]
+transform = Transform3D(-0.719049, -0.0307984, 0.694277, 1.87583e-08, 0.999018, 0.0443168, -0.69496, 0.0318659, -0.718342, 10.5487, 1.22898, -7.80127)
+fov = 71.0805
+
+[node name="BedCam" type="Camera3D" parent="."]
+transform = Transform3D(-0.69496, 0.031866, -0.718342, 1.7419e-08, 0.999018, 0.0443168, 0.719049, 0.0307984, -0.694277, -5.33857, 0.667289, -7.00767)
+fov = 71.0805
+
+[node name="ClosetCam" type="Camera3D" parent="."]
+transform = Transform3D(0.0164998, 0.291047, -0.956567, -0.00423058, 0.956709, 0.291017, 0.999855, -0.000754888, 0.0170168, -8.13511, 1.53305, 8.30093)
+fov = 71.0805
+
+[node name="Room" parent="." instance=ExtResource("7_5umy3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
+
+[node name="Door" parent="Room" index="1"]
+transform = Transform3D(1.59533, 0, -0.0217762, 0, 2.77329, 0, 0.34635, 0, 0.100304, -0.538276, 3.53835, -10.1311)
+
+[node name="BunkBeds" parent="." instance=ExtResource("8_tvsyg")]
+transform = Transform3D(-9.05372e-08, 0, 2.07125, 0, 2.07125, 0, -2.07125, 0, -9.05372e-08, -4.34181, 1.20906, -6.50661)
+
+[node name="blanket1" parent="BunkBeds" index="7"]
+transform = Transform3D(1, 0, 1.42109e-14, 0, 0.0150806, 0, 0, 0, 1.648, 0, 0.245737, 0.410513)
+surface_material_override/0 = SubResource("StandardMaterial3D_unriy")
+
+[node name="blanket2" parent="BunkBeds" index="11"]
+transform = Transform3D(1, 0, 7.10543e-15, 0, 0.0150806, 0, 0, 0, 1.648, 0, 1.8703, 0.410513)
+surface_material_override/0 = SubResource("StandardMaterial3D_73x07")
+
+[node name="dresser" parent="." instance=ExtResource("10_suq8l")]
+transform = Transform3D(0.52845, 0, 0, 0, 0.52845, 0, 0, 0, 0.52845, -8.51627, 2.38419e-07, 2.55367)
+
+[node name="Radio" parent="." instance=ExtResource("11_i0ahn")]
+transform = Transform3D(0.070786, 0, -0.344111, 0, 0.351316, 0, 0.344111, 0, 0.070786, 3.85886, 0.396725, -1.21404)
+
+[node name="CeilingFan" parent="." instance=ExtResource("12_j33cc")]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -1.7633, 7.86854, -1.83641)
+script = ExtResource("13_kxivs")
+
+[node name="Light" parent="CeilingFan" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_pexgn")
+
+[node name="CeilingLight" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.81336, 6.28143, -1.92644)
+light_energy = 3.0
+omni_range = 37.9933
+
+[node name="RoomCloset" parent="." instance=ExtResource("14_fed0s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.30491, 0, 1.0108)
+
+[node name="nightstand2" parent="." instance=ExtResource("15_1iifq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.71048, 0, -1.84892)
+
+[node name="bookshelf" parent="." instance=ExtResource("16_313h3")]
+transform = Transform3D(-2.51401e-08, 0, -0.483055, 0, 0.575139, 0, 0.575139, 0, -2.1115e-08, 7.40376, 0.0994225, -8.35776)
+
+[node name="ClosetItems" type="Node3D" parent="."]
+
+[node name="hangerClothes_1" parent="ClosetItems" instance=ExtResource("17_vli8m")]
+transform = Transform3D(-1.77764e-08, 0, -0.406677, 0, 0.406677, 0, 0.406677, 0, -1.77764e-08, -7.08607, 0.407177, 9.55074)
+
+[node name="hanger" parent="ClosetItems/hangerClothes_1" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_07riu")
+
+[node name="shirt" parent="ClosetItems/hangerClothes_1" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_juwfi")
+
+[node name="hangerClothes_2" parent="ClosetItems" instance=ExtResource("18_ndnx3")]
+transform = Transform3D(-1.96888e-08, 0, -0.450428, 0, 0.450428, 0, 0.450428, 0, -1.96888e-08, -7.116, -0.03982, 9.32429)
+
+[node name="hanger_001" parent="ClosetItems/hangerClothes_2" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_fn1jd")
+
+[node name="Cube" parent="ClosetItems/hangerClothes_2" index="1"]
+transform = Transform3D(0.126069, 0, 7.10543e-15, 0, 0.286742, 0, 0, 0, 1.49428, -0.00587082, 7.17519, -0.0158119)
+surface_material_override/0 = SubResource("StandardMaterial3D_bjr64")
+
+[node name="hangerClothes_3" parent="ClosetItems" instance=ExtResource("19_jnffh")]
+transform = Transform3D(-1.95293e-08, 0, -0.446778, 0, 0.446778, 0, 0.446778, 0, -1.95293e-08, -7.10239, 0, 8.90115)
+
+[node name="hanger_002" parent="ClosetItems/hangerClothes_3" index="0"]
+transform = Transform3D(0.112563, 0, 0, 0, 1, 0, 0, 0, 0.112563, -0.00587082, 9.772, 0.420212)
+surface_material_override/0 = SubResource("StandardMaterial3D_ivwfu")
+
+[node name="Cube" parent="ClosetItems/hangerClothes_3" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_lb4gd")
+
+[node name="MButtons" parent="." instance=ExtResource("20_edq7e")]
+
+[node name="CornerPositions" type="Node3D" parent="."]
+
+[node name="Bookshelf" type="Node3D" parent="CornerPositions"]
+transform = Transform3D(0.641061, -0.0334774, 0.766759, -1.33987e-09, 0.999048, 0.0436194, -0.76749, -0.0279627, 0.640451, 9.18661, 0.130646, -6.1809)
+
+[node name="Closet" type="Node3D" parent="CornerPositions"]
+transform = Transform3D(-0.999962, 0, -0.00872664, 0, 1, 0, 0.00872664, 0, -0.999962, -5.95377, 0.0632944, 8.42009)
+
+[node name="Bed" type="Node3D" parent="CornerPositions"]
+transform = Transform3D(-0.708739, -0.0817156, 0.700723, -0.114538, 0.993419, 7.86585e-08, -0.696111, -0.0802596, -0.713434, -4.1059, 0.0902342, -5.77602)
+
+[node name="BackCorner" type="Node3D" parent="CornerPositions"]
+transform = Transform3D(0.677786, 0.0437711, -0.733955, -0.0644452, 0.997921, 5.8797e-08, 0.73243, 0.0472998, 0.679198, 7.30208, 0.130646, 7.39737)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_g5vk5")
+
+[connection signal="hideMButtons" from="MemoryGame" to="MButtons" method="_on_hide_m_buttons"]
+[connection signal="showMButtons" from="MemoryGame" to="MButtons" method="_on_show_m_buttons"]
+[connection signal="greenPressed" from="MemoryGame/buttonGreen" to="MemoryGame" method="_on_button_green_green_pressed"]
+[connection signal="mouse_entered" from="MemoryGame/buttonGreen/Area3D" to="MemoryGame/buttonGreen" method="_on_area_3d_mouse_entered"]
+[connection signal="mouse_exited" from="MemoryGame/buttonGreen/Area3D" to="MemoryGame/buttonGreen" method="_on_area_3d_mouse_exited"]
+[connection signal="redPressed" from="MemoryGame/buttonRed" to="MemoryGame" method="_on_button_red_red_pressed"]
+[connection signal="mouse_entered" from="MemoryGame/buttonRed/Area3D" to="MemoryGame/buttonRed" method="_on_area_3d_mouse_entered"]
+[connection signal="mouse_exited" from="MemoryGame/buttonRed/Area3D" to="MemoryGame/buttonRed" method="_on_area_3d_mouse_exited"]
+[connection signal="yellowPressed" from="MemoryGame/buttonYellow" to="MemoryGame" method="_on_button_yellow_yellow_pressed"]
+[connection signal="mouse_entered" from="MemoryGame/buttonYellow/Area3D" to="MemoryGame/buttonYellow" method="_on_area_3d_mouse_entered"]
+[connection signal="mouse_exited" from="MemoryGame/buttonYellow/Area3D" to="MemoryGame/buttonYellow" method="_on_area_3d_mouse_exited"]
+[connection signal="bluePressed" from="MemoryGame/buttonBlue" to="MemoryGame" method="_on_button_blue_blue_pressed"]
+[connection signal="mouse_entered" from="MemoryGame/buttonBlue/Area3D" to="MemoryGame/buttonBlue" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="MemoryGame/buttonBlue/Area3D" to="MemoryGame/buttonBlue" method="_on_area_3d_mouse_exited"]
+[connection signal="animation_started" from="MemoryGame/AnimationPlayer" to="." method="_on_animation_player_animation_started"]
+[connection signal="pressed" from="MButtons/Left" to="." method="_on_left_pressed"]
+[connection signal="pressed" from="MButtons/Right" to="." method="_on_right_pressed"]
+
+[editable path="Eyelids"]
+[editable path="MemoryGame"]
+[editable path="Room"]
+[editable path="BunkBeds"]
+[editable path="CeilingFan"]
+[editable path="ClosetItems/hangerClothes_1"]
+[editable path="ClosetItems/hangerClothes_2"]
+[editable path="ClosetItems/hangerClothes_3"]
+[editable path="MButtons"]

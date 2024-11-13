@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0eyq17g6b7or"]
+
+[ext_resource type="PackedScene" uid="uid://bvj10crayoo4p" path="res://assets/imports/hangerClothes_3.glb" id="1_eg3d1"]
+
+[node name="hangerClothes_3" instance=ExtResource("1_eg3d1")]

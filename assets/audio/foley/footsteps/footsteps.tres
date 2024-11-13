@@ -1,0 +1,22 @@
+[gd_resource type="AudioStreamRandomizer" load_steps=6 format=3 uid="uid://flewie6ld4hh"]
+
+[ext_resource type="AudioStream" uid="uid://0ne3xmu1ppm7" path="res://assets/audio/foley/footsteps/fs1.wav" id="1_naijm"]
+[ext_resource type="AudioStream" uid="uid://cuy0b117ewryc" path="res://assets/audio/foley/footsteps/fs2.wav" id="2_fe3c8"]
+[ext_resource type="AudioStream" uid="uid://df4srjonxh8l" path="res://assets/audio/foley/footsteps/fs3.wav" id="3_trycx"]
+[ext_resource type="AudioStream" uid="uid://cn74xe5fkwkfy" path="res://assets/audio/foley/footsteps/fs4.wav" id="4_md5jt"]
+[ext_resource type="AudioStream" uid="uid://l43bgcvvjuj8" path="res://assets/audio/foley/footsteps/fs5.wav" id="5_cn4qa"]
+
+[resource]
+random_pitch = 1.1
+random_volume_offset_db = 0.2
+streams_count = 5
+stream_0/stream = ExtResource("1_naijm")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("2_fe3c8")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("3_trycx")
+stream_2/weight = 1.0
+stream_3/stream = ExtResource("4_md5jt")
+stream_3/weight = 1.0
+stream_4/stream = ExtResource("5_cn4qa")
+stream_4/weight = 1.0

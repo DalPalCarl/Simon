@@ -1,0 +1,611 @@
+[gd_scene load_steps=22 format=3 uid="uid://b2uj1lcwbi3ld"]
+
+[ext_resource type="PackedScene" uid="uid://bxp5kabafetjy" path="res://assets/imports/MemoryGame.glb" id="1_4asin"]
+[ext_resource type="AudioStream" uid="uid://cs8eg7kt3brf3" path="res://assets/audio/tone1.wav" id="2_p4gel"]
+[ext_resource type="AudioStream" uid="uid://cth2k0gheo1q1" path="res://assets/audio/tone2.wav" id="3_7s0ll"]
+[ext_resource type="AudioStream" uid="uid://bjdnvk0rvv5q" path="res://assets/audio/tone3.wav" id="4_bsepl"]
+[ext_resource type="AudioStream" uid="uid://c5m2rkxb4dydw" path="res://assets/audio/tone4.wav" id="5_nb37a"]
+[ext_resource type="AudioStream" uid="uid://bpo4ewptyv1ju" path="res://assets/audio/failSound.wav" id="6_ckerb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_21bcp"]
+albedo_color = Color(0, 1, 0, 1)
+emission_enabled = true
+emission = Color(0, 1, 0, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ss2km"]
+albedo_color = Color(0, 1, 0, 1)
+emission_enabled = true
+emission = Color(0, 1, 0, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v8qqf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_np54x"]
+albedo_color = Color(1, 0, 0, 1)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q4le6"]
+albedo_color = Color(1, 0, 0, 1)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j3ec0"]
+diffuse_mode = 1
+albedo_color = Color(1, 1, 0, 1)
+emission_enabled = true
+emission = Color(1, 1, 0, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_431o3"]
+diffuse_mode = 1
+albedo_color = Color(1, 1, 0, 1)
+emission_enabled = true
+emission = Color(1, 1, 0, 1)
+emission_energy_multiplier = 0.0
+emission_operator = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mplv3"]
+albedo_color = Color(0, 0, 1, 1)
+emission_enabled = true
+emission = Color(0, 0, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oxlv5"]
+albedo_color = Color(0, 0, 1, 1)
+emission_enabled = true
+emission = Color(0, 0, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="Animation" id="Animation_6vw37"]
+resource_name = "B"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("buttonBlue:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.442029, 0.12351, -0.443726), Vector3(-0.442029, 0.0707949, -0.443726), Vector3(-0.442029, 0.12351, -0.443726)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("buttonBlue:surface_material_override/0:emission_energy_multiplier")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 16.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("buttonBlue:surface_material_override/1:emission_energy_multiplier")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 16.0, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("buttonBlue/OmniLight3D:light_energy")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 13.0, 0.0]
+}
+tracks/4/type = "audio"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("buttonBlue/bluePlayer")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("5_nb37a")
+}],
+"times": PackedFloat32Array(0.05)
+}
+tracks/4/use_blend = true
+
+[sub_resource type="Animation" id="Animation_1357o"]
+resource_name = "G"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("buttonGreen:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.445974, 0.12351, 0.438793), Vector3(0.445974, 0.074434, 0.438793), Vector3(0.445974, 0.12351, 0.438793)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("buttonGreen:surface_material_override/0:emission_energy_multiplier")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 16.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("buttonGreen:surface_material_override/1:emission_energy_multiplier")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 16.0, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("buttonGreen/OmniLight3D:light_energy")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 13.0, 0.0]
+}
+tracks/4/type = "audio"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("buttonGreen/greenPlayer")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("2_p4gel")
+}],
+"times": PackedFloat32Array(0.05)
+}
+tracks/4/use_blend = true
+
+[sub_resource type="Animation" id="Animation_pnkas"]
+resource_name = "R"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("buttonRed:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.44203, 0.12351, 0.438793), Vector3(-0.44203, 0.0866899, 0.438793), Vector3(-0.44203, 0.12351, 0.438793)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("buttonRed:surface_material_override/0:emission_energy_multiplier")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 16.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("buttonRed:surface_material_override/1:emission_energy_multiplier")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 16.0, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("buttonRed/OmniLight3D:light_energy")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 13.0, 0.0]
+}
+tracks/4/type = "audio"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("buttonRed/redPlayer")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_7s0ll")
+}],
+"times": PackedFloat32Array(0.04)
+}
+tracks/4/use_blend = true
+
+[sub_resource type="Animation" id="Animation_e6j8f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("buttonBlue:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.442029, 0.12351, -0.443726)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("buttonRed:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.44203, 0.12351, 0.438793)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("buttonGreen:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.445974, 0.12351, 0.438793)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("buttonYellow:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.445974, 0.12351, -0.443726)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("buttonBlue:surface_material_override/0:emission_energy_multiplier")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("buttonRed:surface_material_override/0:emission_energy_multiplier")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("buttonYellow:surface_material_override/0:emission_energy_multiplier")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("buttonGreen:surface_material_override/0:emission_energy_multiplier")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("buttonRed:surface_material_override/1:emission_energy_multiplier")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("buttonGreen:surface_material_override/1:emission_energy_multiplier")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("buttonBlue:surface_material_override/1:emission_energy_multiplier")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("buttonGreen/OmniLight3D:light_energy")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("buttonRed/OmniLight3D:light_energy")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("buttonYellow/OmniLight3D:light_energy")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("buttonBlue/OmniLight3D:light_energy")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_bqxw4"]
+resource_name = "Y"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("buttonYellow:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.445974, 0.12351, -0.443726), Vector3(0.445974, 0.07946, -0.443726), Vector3(0.445974, 0.12351, -0.443726)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("buttonYellow:surface_material_override/0:emission_energy_multiplier")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 16.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("buttonYellow:surface_material_override/1:emission_energy_multiplier")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 16.0, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("buttonYellow/OmniLight3D:light_energy")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 13.0, 0.0]
+}
+tracks/4/type = "audio"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("buttonYellow/yellowPlayer")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_bsepl")
+}],
+"times": PackedFloat32Array(0.06)
+}
+tracks/4/use_blend = true
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gerxt"]
+_data = {
+"B": SubResource("Animation_6vw37"),
+"G": SubResource("Animation_1357o"),
+"R": SubResource("Animation_pnkas"),
+"RESET": SubResource("Animation_e6j8f"),
+"Y": SubResource("Animation_bqxw4")
+}
+
+[node name="MemoryGame" instance=ExtResource("1_4asin")]
+
+[node name="buttonGreen" parent="." index="1"]
+transform = Transform3D(0.801858, 0, 0, 0, 0.0481226, 0, 0, 0, 0.801858, 0.445974, 0.12351, 0.438793)
+surface_material_override/0 = SubResource("StandardMaterial3D_21bcp")
+surface_material_override/1 = SubResource("StandardMaterial3D_ss2km")
+
+[node name="Area3D" type="Area3D" parent="buttonGreen" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="buttonGreen/Area3D" index="0"]
+transform = Transform3D(0.999997, 0, 0, 0, 1, 0, 0, 0, 0.999997, 0, 0, 0)
+shape = SubResource("BoxShape3D_v8qqf")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="buttonGreen" index="1"]
+transform = Transform3D(1.2471, 0, 0, 0, 20.7803, 0, 0, 0, 1.2471, 0, 2.50559, 0)
+light_color = Color(0, 1, 0, 1)
+light_energy = 0.0
+distance_fade_enabled = true
+omni_range = 20.0
+
+[node name="greenPlayer" type="AudioStreamPlayer" parent="buttonGreen" index="2"]
+
+[node name="buttonRed" parent="." index="2"]
+transform = Transform3D(0.801858, 0, 0, 0, 0.0481226, 0, 0, 0, 0.801858, -0.44203, 0.12351, 0.438793)
+surface_material_override/0 = SubResource("StandardMaterial3D_np54x")
+surface_material_override/1 = SubResource("StandardMaterial3D_q4le6")
+
+[node name="Area3D" type="Area3D" parent="buttonRed" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="buttonRed/Area3D" index="0"]
+transform = Transform3D(0.999997, 0, 0, 0, 1, 0, 0, 0, 0.999997, 0, 0, 0)
+shape = SubResource("BoxShape3D_v8qqf")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="buttonRed" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.506, 0)
+light_color = Color(1, 0, 0, 1)
+light_energy = 0.0
+omni_range = 20.0
+
+[node name="redPlayer" type="AudioStreamPlayer" parent="buttonRed" index="2"]
+
+[node name="buttonYellow" parent="." index="3"]
+transform = Transform3D(0.801858, 0, 0, 0, 0.0481226, 0, 0, 0, 0.801858, 0.445974, 0.12351, -0.443726)
+surface_material_override/0 = SubResource("StandardMaterial3D_j3ec0")
+surface_material_override/1 = SubResource("StandardMaterial3D_431o3")
+
+[node name="Area3D" type="Area3D" parent="buttonYellow" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="buttonYellow/Area3D" index="0"]
+transform = Transform3D(0.999997, 0, 0, 0, 1, 0, 0, 0, 0.999997, 0, 0, 0)
+shape = SubResource("BoxShape3D_v8qqf")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="buttonYellow" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.506, 0)
+light_color = Color(1, 1, 0, 1)
+light_energy = 0.0
+omni_range = 20.0
+
+[node name="yellowPlayer" type="AudioStreamPlayer" parent="buttonYellow" index="2"]
+
+[node name="buttonBlue" parent="." index="4"]
+transform = Transform3D(0.801858, 0, 0, 0, 0.0481226, 0, 0, 0, 0.801858, -0.442029, 0.12351, -0.443726)
+surface_material_override/0 = SubResource("StandardMaterial3D_mplv3")
+surface_material_override/1 = SubResource("StandardMaterial3D_oxlv5")
+
+[node name="Area3D" type="Area3D" parent="buttonBlue" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="buttonBlue/Area3D" index="0"]
+transform = Transform3D(0.999997, 0, 0, 0, 1, 0, 0, 0, 0.999997, 0, 0, 0)
+shape = SubResource("BoxShape3D_v8qqf")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="buttonBlue" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.506, 0)
+light_color = Color(0, 0, 1, 1)
+light_energy = 0.0
+omni_range = 20.0
+
+[node name="bluePlayer" type="AudioStreamPlayer" parent="buttonBlue" index="2"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="6"]
+libraries = {
+"": SubResource("AnimationLibrary_gerxt")
+}
+next/RESET = &"RESET"
+
+[node name="Timer" type="Timer" parent="." index="7"]
+
+[node name="failSound" type="AudioStreamPlayer" parent="." index="8"]
+stream = ExtResource("6_ckerb")

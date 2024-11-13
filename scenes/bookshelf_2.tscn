@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cqd2exuw7u756"]
+
+[ext_resource type="PackedScene" uid="uid://dxrhfw4a8i4eu" path="res://assets/imports/bookshelf_2.glb" id="1_p5rax"]
+
+[node name="bookshelf_2" instance=ExtResource("1_p5rax")]
+
+[node name="Furniture_Shelf_2" parent="." index="0"]
+transform = Transform3D(-1.19209e-07, 0, 1, 0, 1, 0, -1, 0, -1.19209e-07, 0.0276048, 1.18459, -0.0649371)

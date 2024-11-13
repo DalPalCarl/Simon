@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://4j7ts2upgbcg"]
+
+[ext_resource type="PackedScene" uid="uid://ctnluwbjnl3no" path="res://assets/imports/Room.glb" id="1_ft8vw"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mt7i3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5jupj"]
+albedo_texture = SubResource("CompressedTexture2D_mt7i3")
+
+[node name="Room" instance=ExtResource("1_ft8vw")]
+
+[node name="Door" parent="." index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_5jupj")

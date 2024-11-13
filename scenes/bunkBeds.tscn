@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqon077i4rbmn"]
+
+[ext_resource type="PackedScene" uid="uid://goqh6yn41pk1" path="res://assets/imports/BunkBeds.glb" id="1_q5pe3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fp0sk"]
+albedo_color = Color(0.593134, 0.593134, 0.593134, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4jhi5"]
+albedo_color = Color(0.592157, 0.592157, 0.592157, 1)
+
+[node name="BunkBeds" instance=ExtResource("1_q5pe3")]
+
+[node name="mattress" parent="." index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_fp0sk")
+
+[node name="mattress2" parent="." index="9"]
+surface_material_override/0 = SubResource("StandardMaterial3D_4jhi5")

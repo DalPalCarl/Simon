@@ -1,0 +1,14 @@
+[gd_resource type="AudioStreamRandomizer" load_steps=4 format=3 uid="uid://chn55w8age3l8"]
+
+[ext_resource type="AudioStream" uid="uid://bbcarf4g3bfvm" path="res://assets/audio/foley/simonBreathing/monsterInhale.wav" id="1_4f6vo"]
+[ext_resource type="AudioStream" uid="uid://dh0dhtoegd8j1" path="res://assets/audio/foley/simonBreathing/monsterInhale2.wav" id="2_jjm3o"]
+[ext_resource type="AudioStream" uid="uid://c2073lo7fur4p" path="res://assets/audio/foley/simonBreathing/monsterInhale3.wav" id="3_xxpub"]
+
+[resource]
+streams_count = 3
+stream_0/stream = ExtResource("1_4f6vo")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("2_jjm3o")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("3_xxpub")
+stream_2/weight = 1.0

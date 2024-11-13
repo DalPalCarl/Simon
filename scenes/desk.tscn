@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://8agm4cgooeud"]
+
+[ext_resource type="PackedScene" uid="uid://bsnh380t1kfv3" path="res://assets/imports/desk.glb" id="1_f3trq"]
+
+[node name="desk" instance=ExtResource("1_f3trq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00608474, 0.756308, -0.0533837)
+
+[node name="Furniture_Table_8" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
