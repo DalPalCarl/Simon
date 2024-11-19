@@ -6,6 +6,7 @@ signal jumpscare
 signal jumpscare_01
 @onready var simon = $Simon5
 @onready var timerScore : Label = $timerLabel/TimerScore
+@onready var testLabel : Label = $timerLabel/TestLabel
 @onready var memory_game = $MemoryGame
 @onready var radio = $Radio
 @onready var movement_buttons : CanvasLayer = $MButtons
@@ -61,7 +62,7 @@ func _ready():
 func _process(delta):
 	#When primed (simon is at player), the player cannot:
 	# 1 - mess up sequence
-	# 2 - wait to long for input
+	# 2 - wait too long for input
 	# 3 - move locations
 	# or they will die.  We want the drone to play, and we want the primed
 	# state to last for a random time between 6 and 20 sec, and after the
@@ -73,48 +74,43 @@ func _process(delta):
 		radio.queue_free()
 		newscasterVoiceTimer.start(1.0)
 		introTimer.start(1.0)
+	
+	testLabel.text = str(simon_state)
 
 func state_transition(prev_state : States, new_state : States):
 	if prev_state == States.INACTIVE:
 		simon_state = States.ACTIVE
 		mvmtTimer.start(6.0)
 	elif prev_state == States.ACTIVE:
-		if monster_pos == player_pos:
-			simon_state == States.PRIMED
-			drone.play()
-			await get_tree().create_timer(6.0 + randf_range(0.0, 19.0)).timeout
-			state_transition(simon_state, States.ACTIVE)
-			monster_pos = (monster_pos + randi_range(1,3)) % 4
-			simon.anim_update(player_pos, monster_pos)
-	if prev_state == States.PRIMED:
+		simon_state = new_state
+		drone.play()
+		primedTimer.start(6.0 + randf_range(0.0, 14.0))
+	elif prev_state == States.PRIMED:
 		if new_state == States.ACTIVE:
 			simon_state = new_state
 			environment.play("droneFadeOut")
 		else:
 			simon_state == States.SCARE
 			mvmtTimer.stop()
+			primedTimer.stop()
 			drone.stop()
 			hideMButtons()
 			if player_pos == 1 or player_pos == 0:
 				if randf() >= 0.5:
 					memory_game.paused == true
+			player_death()
+	print("Transition fired")
 
 func _on_left_pressed():
 	if simon_state == States.PRIMED:
-		if randf() >= 0.5:
-			state_transition(simon_state, States.SCARE)
-		else:
-			mvmt_scare()
+		mvmt_scare()
 	else:
 		player_pos = (player_pos + 3) % 4
 		move_player()
 
 func _on_right_pressed():
 	if simon_state == States.PRIMED:
-		if randf() >= 0.5:
-			state_transition(simon_state, States.SCARE)
-		else:
-			mvmt_scare()
+		mvmt_scare()
 	else:
 		player_pos = (player_pos + 1) % 4
 		move_player()
@@ -123,6 +119,7 @@ func mvmt_scare():
 	hideMButtons()
 	mvmtTimer.stop()
 	eyelidsAnim.play("eye_close")
+	state_transition(simon_state, States.SCARE)
 	await get_tree().create_timer(0.6).timeout
 	$Eyelids.hide()
 	player_death()
@@ -215,9 +212,8 @@ func _on_movement_timer_timeout():
 	if simon_state == States.ACTIVE:
 		monster_move()
 		mvmtTimer.start(6.0)
-	if simon_state == States.PRIMED:
+	elif simon_state == States.PRIMED:
 		state_transition(simon_state, States.SCARE)
-		player_death()
 
 func _on_memory_game_emit_light():
 	if simon_state == States.SCARE:
@@ -234,3 +230,8 @@ func hideMButtons():
 func showMButtons():
 	if showingButtons:
 		movement_buttons.show()
+
+func _on_primed_timer_timeout():
+	state_transition(simon_state, States.ACTIVE)
+	monster_pos = (monster_pos + randi_range(1,3)) % 4
+	simon.anim_update(player_pos, monster_pos)

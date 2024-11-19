@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://onmbwuntaimy"]
+[gd_scene load_steps=61 format=3 uid="uid://onmbwuntaimy"]
 
 [ext_resource type="Script" path="res://scripts/mainGame.gd" id="1_i4lp5"]
 [ext_resource type="PackedScene" uid="uid://b2uj1lcwbi3ld" path="res://scenes/memory_game.tscn" id="2_8jt08"]
@@ -38,6 +38,9 @@
 [ext_resource type="PackedScene" uid="uid://btbchwji6j0eo" path="res://scenes/simon.tscn" id="36_mydiu"]
 [ext_resource type="AudioStream" uid="uid://jhg28h55t8ob" path="res://assets/audio/stringsHeartbeatDrone.wav" id="38_f6nh6"]
 [ext_resource type="FontFile" uid="uid://chg6m7xvmv0ha" path="res://assets/fonts/sixCaps.ttf" id="38_mqu1i"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_nqs14"]
+viewport_path = NodePath("SubViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pexgn"]
 emission_enabled = true
@@ -810,15 +813,21 @@ theme_override_fonts/font = ExtResource("38_mqu1i")
 theme_override_font_sizes/font_size = 81
 text = "0.0"
 
+[node name="TestLabel" type="Label" parent="timerLabel"]
+offset_left = 60.0
+offset_top = 112.0
+offset_right = 201.0
+offset_bottom = 154.0
+
 [node name="Eyelids" parent="." instance=ExtResource("22_4yfvq")]
 
 [node name="ColorRect" parent="Eyelids" index="0"]
 offset_right = -768.0
 
 [node name="ColorRect2" parent="Eyelids" index="1"]
-offset_top = 4536.0
+offset_top = 6156.0
 offset_right = 1152.0
-offset_bottom = 4536.0
+offset_bottom = 6156.0
 
 [node name="MemoryGame" parent="." instance=ExtResource("2_8jt08")]
 transform = Transform3D(-0.999962, 0, -0.00872664, 0, 1, 0, 0.00872664, 0, -0.999962, -5.95377, 0.0632944, 8.42009)
@@ -838,6 +847,9 @@ script = ExtResource("7_qbjxl")
 
 [node name="Center" parent="MemoryGame" index="5"]
 transform = Transform3D(-0.0195264, 0, -1.30385e-08, 0, 0.0195264, 0, 6.51926e-09, 0, -0.0433372, -0.0757208, 0.159126, 0.13404)
+
+[node name="Sprite3D" parent="MemoryGame" index="10"]
+texture = SubResource("ViewportTexture_nqs14")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="MemoryGame"]
 transform = Transform3D(0.00872659, -0.931218, 0.364359, -1.21887e-07, 0.364373, 0.931253, -0.999962, -0.00812671, 0.00317962, 0.425311, 1.44023, -0.0358562)
@@ -1078,6 +1090,7 @@ one_shot = true
 
 [node name="PrimedTimer" type="Timer" parent="."]
 wait_time = 6.0
+one_shot = true
 
 [node name="Simon5" parent="." instance=ExtResource("36_mydiu")]
 transform = Transform3D(0.433423, 0.000272456, 0.121014, 0, 0.449999, -0.00101314, -0.121014, 0.000975823, 0.433421, -213.459, 1.39325, 52.1817)
@@ -1087,19 +1100,19 @@ bones/13/rotation = Quaternion(-0.4509, 0.0144563, 0.106787, 0.886046)
 bones/14/rotation = Quaternion(0.136, -0.0774608, 0.226783, 0.961287)
 
 [node name="caucasian-low_poly" parent="Simon5/Armature/Skeleton3D" index="0"]
-transform = Transform3D(-0.627055, -0.77897, 0.002766, -0.778221, 0.626289, -0.0461959, 0.0342528, -0.0311199, -0.998929, 0.564846, -1.41442, 4.32189)
+transform = Transform3D(-0.627055, -0.77897, 0.002766, 0.297346, -0.242636, -0.923425, 0.719991, -0.578216, 0.38377, 0.564846, 2.93614, 6.40419)
 
 [node name="caucasian-short04" parent="Simon5/Armature/Skeleton3D" index="1"]
-transform = Transform3D(-0.627055, -0.77897, 0.002766, -0.778221, 0.626289, -0.0461959, 0.0342528, -0.0311199, -0.998929, 0.660248, -1.49005, 5.04243)
+transform = Transform3D(-0.627055, -0.77897, 0.002766, 0.297346, -0.242636, -0.923425, 0.719991, -0.578216, 0.38377, 0.660248, 3.63934, 6.2298)
 
 [node name="caucasian-short04" parent="Simon5/Armature/Skeleton3D/caucasian-short04" index="0"]
 transform = Transform3D(1, 0, 1.11759e-08, -7.45058e-09, 1, -2.98023e-08, 3.72529e-09, 0, 1, 0, 0, 0)
 
 [node name="caucasian-teeth_base" parent="Simon5/Armature/Skeleton3D" index="2"]
-transform = Transform3D(-0.627055, -0.77897, 0.002766, -0.778221, 0.626289, -0.0461959, 0.0342528, -0.0311199, -0.998929, 0.281483, -1.06637, 4.33954)
+transform = Transform3D(-0.627055, -0.77897, 0.002766, 0.297346, -0.242636, -0.923425, 0.719991, -0.578216, 0.38377, 0.281483, 2.83415, 6.07095)
 
 [node name="caucasian-tongue01" parent="Simon5/Armature/Skeleton3D" index="3"]
-transform = Transform3D(-0.627055, -0.77897, 0.002766, -0.778221, 0.626289, -0.0461959, 0.0342528, -0.0311199, -0.998929, 0.0251927, -0.702278, 4.52939)
+transform = Transform3D(-0.627055, -0.77897, 0.002766, 0.297346, -0.242636, -0.923425, 0.719991, -0.578216, 0.38377, 0.0251927, 2.8886, 5.66396)
 
 [node name="Jumpscare" parent="Simon5" index="4"]
 volume_db = 5.0
@@ -1133,6 +1146,7 @@ volume_db = -5.0
 [connection signal="animation_finished" from="Environment" to="." method="_on_environment_animation_finished"]
 [connection signal="timeout" from="NewsCaster" to="." method="_on_news_caster_timeout"]
 [connection signal="timeout" from="MovementTimer" to="." method="_on_movement_timer_timeout"]
+[connection signal="timeout" from="PrimedTimer" to="." method="_on_primed_timer_timeout"]
 
 [editable path="Eyelids"]
 [editable path="MemoryGame"]

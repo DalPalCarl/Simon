@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://b2uj1lcwbi3ld"]
+[gd_scene load_steps=24 format=3 uid="uid://b2uj1lcwbi3ld"]
 
 [ext_resource type="PackedScene" uid="uid://bxp5kabafetjy" path="res://assets/imports/MemoryGame.glb" id="1_4asin"]
 [ext_resource type="AudioStream" uid="uid://cs8eg7kt3brf3" path="res://assets/audio/tone1.wav" id="2_p4gel"]
@@ -520,6 +520,12 @@ _data = {
 "Y": SubResource("Animation_bqxw4")
 }
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vg8e5"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_mfpos"]
+viewport_path = NodePath("SubViewport")
+
 [node name="MemoryGame" instance=ExtResource("1_4asin")]
 
 [node name="buttonGreen" parent="." index="1"]
@@ -609,3 +615,26 @@ next/RESET = &"RESET"
 
 [node name="failSound" type="AudioStreamPlayer" parent="." index="8"]
 stream = ExtResource("6_ckerb")
+
+[node name="SubViewport" type="SubViewport" parent="." index="9"]
+size = Vector2i(70, 180)
+
+[node name="ProgressBar" type="ProgressBar" parent="SubViewport" index="0"]
+visible = false
+modulate = Color(0, 1, 0, 1)
+offset_left = -76.0
+offset_right = 75.0
+offset_bottom = 181.0
+theme_override_styles/background = SubResource("StyleBoxFlat_vg8e5")
+max_value = 3.0
+step = 1.0
+value = 2.0
+fill_mode = 3
+show_percentage = false
+
+[node name="Sprite3D" type="Sprite3D" parent="." index="10"]
+transform = Transform3D(-4.37231e-08, -0.167438, -1.19975e-08, 0, -7.31894e-09, 0.274472, -1.00027, 7.31894e-09, 5.24429e-16, 0.157589, 0.158901, 0)
+visible = false
+texture = SubResource("ViewportTexture_mfpos")
+region_enabled = true
+region_rect = Rect2(0, 0, 57.16, 168.664)
