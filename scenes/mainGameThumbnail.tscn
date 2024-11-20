@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://le4j550lp5k8"]
+[gd_scene load_steps=60 format=3 uid="uid://le4j550lp5k8"]
 
 [ext_resource type="Script" path="res://scripts/mainGame.gd" id="1_8lqg5"]
 [ext_resource type="PackedScene" uid="uid://cbbr20p011h35" path="res://scenes/eyelids.tscn" id="2_oo8go"]
@@ -37,6 +37,9 @@
 [ext_resource type="PackedScene" uid="uid://dtrldssrjkoj2" path="res://scenes/nightstand_2.tscn" id="35_dgbxn"]
 [ext_resource type="PackedScene" uid="uid://btbchwji6j0eo" path="res://scenes/simon.tscn" id="36_dq0bc"]
 [ext_resource type="AudioStream" uid="uid://jhg28h55t8ob" path="res://assets/audio/stringsHeartbeatDrone.wav" id="37_2q15h"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_dr77a"]
+viewport_path = NodePath("SubViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pexgn"]
 emission_enabled = true
@@ -801,8 +804,8 @@ script = ExtResource("1_8lqg5")
 [node name="Eyelids" parent="." instance=ExtResource("2_oo8go")]
 
 [node name="ColorRect2" parent="Eyelids" index="1"]
-offset_top = 12096.0
-offset_bottom = 12096.0
+offset_top = 13176.0
+offset_bottom = 13176.0
 
 [node name="MemoryGame" parent="." instance=ExtResource("3_sk378")]
 transform = Transform3D(-0.999962, 0, -0.00872664, 0, 1, 0, 0.00872664, 0, -0.999962, -5.95377, 0.0632944, 8.42009)
@@ -822,6 +825,9 @@ script = ExtResource("8_wmlos")
 
 [node name="Center" parent="MemoryGame" index="5"]
 transform = Transform3D(-0.0195264, 0, -1.30385e-08, 0, 0.0195264, 0, 6.51926e-09, 0, -0.0433372, -0.0757208, 0.159126, 0.13404)
+
+[node name="Sprite3D" parent="MemoryGame" index="10"]
+texture = SubResource("ViewportTexture_dr77a")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="MemoryGame"]
 transform = Transform3D(0.00872659, -0.931218, 0.364359, -1.21887e-07, 0.364373, 0.931253, -0.999962, -0.00812671, 0.00317962, 0.425311, 1.44023, -0.0358562)
@@ -1068,19 +1074,19 @@ bones/13/rotation = Quaternion(-0.4509, 0.0144563, 0.106787, 0.886046)
 bones/14/rotation = Quaternion(0.136, -0.0774608, 0.226783, 0.961287)
 
 [node name="caucasian-low_poly" parent="Simon5/Armature/Skeleton3D" index="0"]
-transform = Transform3D(-0.627055, -0.77897, 0.002766, -0.778221, 0.626289, -0.0461959, 0.0342528, -0.0311199, -0.998929, 0.564846, -1.41442, 4.32189)
+transform = Transform3D(-0.627055, -0.77897, 0.002766, 0.297346, -0.242636, -0.923425, 0.719991, -0.578216, 0.38377, 0.564846, 2.93614, 6.40419)
 
 [node name="caucasian-short04" parent="Simon5/Armature/Skeleton3D" index="1"]
-transform = Transform3D(-0.627055, -0.77897, 0.002766, -0.778221, 0.626289, -0.0461959, 0.0342528, -0.0311199, -0.998929, 0.660248, -1.49005, 5.04243)
+transform = Transform3D(-0.627055, -0.77897, 0.002766, 0.297346, -0.242636, -0.923425, 0.719991, -0.578216, 0.38377, 0.660248, 3.63934, 6.2298)
 
 [node name="caucasian-short04" parent="Simon5/Armature/Skeleton3D/caucasian-short04" index="0"]
 transform = Transform3D(1, 0, 1.11759e-08, -7.45058e-09, 1, -2.98023e-08, 3.72529e-09, 0, 1, 0, 0, 0)
 
 [node name="caucasian-teeth_base" parent="Simon5/Armature/Skeleton3D" index="2"]
-transform = Transform3D(-0.627055, -0.77897, 0.002766, -0.778221, 0.626289, -0.0461959, 0.0342528, -0.0311199, -0.998929, 0.281483, -1.06637, 4.33954)
+transform = Transform3D(-0.627055, -0.77897, 0.002766, 0.297346, -0.242636, -0.923425, 0.719991, -0.578216, 0.38377, 0.281483, 2.83415, 6.07095)
 
 [node name="caucasian-tongue01" parent="Simon5/Armature/Skeleton3D" index="3"]
-transform = Transform3D(-0.627055, -0.77897, 0.002766, -0.778221, 0.626289, -0.0461959, 0.0342528, -0.0311199, -0.998929, 0.0251927, -0.702278, 4.52939)
+transform = Transform3D(-0.627055, -0.77897, 0.002766, 0.297346, -0.242636, -0.923425, 0.719991, -0.578216, 0.38377, 0.0251927, 2.8886, 5.66396)
 
 [node name="Jumpscare" parent="Simon5" index="4"]
 volume_db = 5.0

@@ -67,7 +67,7 @@ func _process(delta):
 	# or they will die.  We want the drone to play, and we want the primed
 	# state to last for a random time between 6 and 20 sec, and after the
 	# timer runs out, we 
-	if simon_state == States.ACTIVE and !dead:
+	if (simon_state == States.ACTIVE or simon_state == States.PRIMED) and !dead:
 		timeSurvived += delta
 		timerScore.text = str(snappedf(timeSurvived, 0.01))
 	if Input.is_action_just_pressed("Debug"):
@@ -99,7 +99,6 @@ func state_transition(prev_state : States, new_state : States):
 				if randf() >= 0.5:
 					memory_game.paused == true
 			player_death()
-	print("Transition fired")
 
 func _on_left_pressed():
 	if simon_state == States.PRIMED:
@@ -214,8 +213,10 @@ func _on_movement_timer_timeout():
 		mvmtTimer.start(6.0)
 	elif simon_state == States.PRIMED:
 		state_transition(simon_state, States.SCARE)
+	
 
 func _on_memory_game_emit_light():
+	isLit = true
 	if simon_state == States.SCARE:
 		if player_pos == 1 or player_pos == 0:
 			memory_game.paused = true
@@ -223,6 +224,8 @@ func _on_memory_game_emit_light():
 			dead = true
 	else:
 		mvmtTimer.start(6.0)
+	await get_tree().create_timer(1.0).timeout
+	isLit = false
 
 func hideMButtons():
 	movement_buttons.hide()
