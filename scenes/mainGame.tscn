@@ -819,15 +819,22 @@ offset_top = 112.0
 offset_right = 201.0
 offset_bottom = 154.0
 
+[node name="TestMvmtTimer" type="Label" parent="timerLabel"]
+offset_left = 344.0
+offset_top = 20.0
+offset_right = 428.0
+offset_bottom = 78.0
+text = "0"
+
 [node name="Eyelids" parent="." instance=ExtResource("22_4yfvq")]
 
 [node name="ColorRect" parent="Eyelids" index="0"]
 offset_right = -768.0
 
 [node name="ColorRect2" parent="Eyelids" index="1"]
-offset_top = 6156.0
+offset_top = 7236.0
 offset_right = 1152.0
-offset_bottom = 6156.0
+offset_bottom = 7236.0
 
 [node name="MemoryGame" parent="." instance=ExtResource("2_8jt08")]
 transform = Transform3D(-0.999962, 0, -0.00872664, 0, 1, 0, 0.00872664, 0, -0.999962, -5.95377, 0.0632944, 8.42009)

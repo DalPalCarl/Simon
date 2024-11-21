@@ -7,6 +7,7 @@ signal jumpscare_01
 @onready var simon = $Simon5
 @onready var timerScore : Label = $timerLabel/TimerScore
 @onready var testLabel : Label = $timerLabel/TestLabel
+@onready var testMvmtTimer : Label = $timerLabel/TestMvmtTimer
 @onready var memory_game = $MemoryGame
 @onready var radio = $Radio
 @onready var movement_buttons : CanvasLayer = $MButtons
@@ -76,6 +77,7 @@ func _process(delta):
 		introTimer.start(1.0)
 	
 	testLabel.text = str(simon_state)
+	testMvmtTimer.text = str(mvmtTimer.time_left)
 
 func state_transition(prev_state : States, new_state : States):
 	if prev_state == States.INACTIVE:

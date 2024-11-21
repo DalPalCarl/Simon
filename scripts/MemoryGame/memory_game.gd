@@ -42,6 +42,7 @@ func display_sequence():
 			break
 		await get_tree().create_timer(1.5).timeout
 		anim_Player.play(sequence[i])
+		emitLight.emit()
 	await get_tree().create_timer(0.5).timeout
 	if !paused:
 		get_parent().showMButtons()
