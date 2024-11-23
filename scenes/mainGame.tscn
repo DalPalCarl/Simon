@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://onmbwuntaimy"]
+[gd_scene load_steps=58 format=3 uid="uid://onmbwuntaimy"]
 
 [ext_resource type="Script" path="res://scripts/mainGame.gd" id="1_i4lp5"]
 [ext_resource type="PackedScene" uid="uid://b2uj1lcwbi3ld" path="res://scenes/memory_game.tscn" id="2_8jt08"]
@@ -15,8 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://bhregkvsh8ust" path="res://scenes/room_closet.tscn" id="14_fed0s"]
 [ext_resource type="Material" uid="uid://ddikk7cvkq0wb" path="res://materials/grainy.tres" id="15_ktucm"]
 [ext_resource type="PackedScene" uid="uid://bvikqa1xt61um" path="res://scenes/hanger_clothes_1.tscn" id="17_vli8m"]
-[ext_resource type="PackedScene" uid="uid://d0pko146fqmo7" path="res://scenes/hanger_clothes_2.tscn" id="18_ndnx3"]
-[ext_resource type="PackedScene" uid="uid://c0eyq17g6b7or" path="res://scenes/hanger_clothes_3.tscn" id="19_jnffh"]
+[ext_resource type="PackedScene" uid="uid://daei7v8cjtam3" path="res://scenes/hanger_clothes_2.tscn" id="18_ndnx3"]
 [ext_resource type="PackedScene" uid="uid://bukpi3uiwxcki" path="res://scenes/mvmtbuttons.tscn" id="20_edq7e"]
 [ext_resource type="PackedScene" uid="uid://cbbr20p011h35" path="res://scenes/eyelids.tscn" id="22_4yfvq"]
 [ext_resource type="AudioStream" uid="uid://dmnek4b631uuq" path="res://assets/audio/roomAmbiance.wav" id="23_bwmxv"]
@@ -39,34 +38,25 @@
 [ext_resource type="AudioStream" uid="uid://jhg28h55t8ob" path="res://assets/audio/stringsHeartbeatDrone.wav" id="38_f6nh6"]
 [ext_resource type="FontFile" uid="uid://chg6m7xvmv0ha" path="res://assets/fonts/sixCaps.ttf" id="38_mqu1i"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_nqs14"]
-viewport_path = NodePath("SubViewport")
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pexgn"]
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 4.0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_07riu"]
-albedo_color = Color(0.103744, 0.103744, 0.103744, 1)
-metallic_specular = 0.0
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cyl07"]
+albedo_color = Color(0, 0, 0.423529, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_juwfi"]
-albedo_color = Color(0, 0.305882, 1, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dcp8d"]
+albedo_color = Color(0.447364, 0, 0.0438589, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fn1jd"]
-albedo_color = Color(0.103744, 0.103744, 0.103744, 1)
-metallic_specular = 0.0
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8781w"]
+albedo_color = Color(0, 0.113725, 0.231373, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bjr64"]
-albedo_color = Color(0, 0, 0.388235, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ffabj"]
+albedo_color = Color(0.418238, 0.601976, 1, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ivwfu"]
-albedo_color = Color(0.103744, 0.103744, 0.103744, 1)
-metallic_specular = 0.0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lb4gd"]
-albedo_color = Color(0, 0.619608, 1, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cls80"]
+albedo_color = Color(0.197937, 0.197937, 0.197937, 1)
 
 [sub_resource type="Environment" id="Environment_g5vk5"]
 background_mode = 3
@@ -829,12 +819,12 @@ text = "0"
 [node name="Eyelids" parent="." instance=ExtResource("22_4yfvq")]
 
 [node name="ColorRect" parent="Eyelids" index="0"]
-offset_right = -768.0
+offset_right = 192.0
 
 [node name="ColorRect2" parent="Eyelids" index="1"]
-offset_top = 7236.0
-offset_right = 1152.0
-offset_bottom = 7236.0
+offset_top = 8856.0
+offset_right = 2112.0
+offset_bottom = 8856.0
 
 [node name="MemoryGame" parent="." instance=ExtResource("2_8jt08")]
 transform = Transform3D(-0.999962, 0, -0.00872664, 0, 1, 0, 0.00872664, 0, -0.999962, -5.95377, 0.0632944, 8.42009)
@@ -854,9 +844,6 @@ script = ExtResource("7_qbjxl")
 
 [node name="Center" parent="MemoryGame" index="5"]
 transform = Transform3D(-0.0195264, 0, -1.30385e-08, 0, 0.0195264, 0, 6.51926e-09, 0, -0.0433372, -0.0757208, 0.159126, 0.13404)
-
-[node name="Sprite3D" parent="MemoryGame" index="10"]
-texture = SubResource("ViewportTexture_nqs14")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="MemoryGame"]
 transform = Transform3D(0.00872659, -0.931218, 0.364359, -1.21887e-07, 0.364373, 0.931253, -0.999962, -0.00812671, 0.00317962, 0.425311, 1.44023, -0.0358562)
@@ -925,33 +912,59 @@ surface_material_override/0 = ExtResource("15_ktucm")
 [node name="ClosetItems" type="Node3D" parent="."]
 
 [node name="hangerClothes_1" parent="ClosetItems" instance=ExtResource("17_vli8m")]
-transform = Transform3D(-1.77764e-08, 0, -0.406677, 0, 0.406677, 0, 0.406677, 0, -1.77764e-08, -7.08607, 0.407177, 9.55074)
+transform = Transform3D(-1.70397e-08, 0, -0.403546, 0, 0.269202, 0, 0.389822, 0, -1.76395e-08, -7.22574, 4.40509, 8.78355)
 
-[node name="hanger" parent="ClosetItems/hangerClothes_1" index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_07riu")
+[node name="Cube" parent="ClosetItems/hangerClothes_1" index="1"]
+transform = Transform3D(0.142231, 0, -1.06581e-14, 0, 1.57668, 0, 8.88178e-16, 0, 1.0301, -0.00587082, -5.66466, -0.28842)
+surface_material_override/0 = SubResource("StandardMaterial3D_cyl07")
 
-[node name="shirt" parent="ClosetItems/hangerClothes_1" index="1"]
-surface_material_override/0 = SubResource("StandardMaterial3D_juwfi")
+[node name="hangerClothes_5" parent="ClosetItems" instance=ExtResource("17_vli8m")]
+transform = Transform3D(5.1119e-08, 0, 0.403546, 0, 0.269202, 0, -0.389822, 0, 5.29186e-08, -7.22574, 4.40509, 7.43715)
 
-[node name="hangerClothes_2" parent="ClosetItems" instance=ExtResource("18_ndnx3")]
-transform = Transform3D(-1.96888e-08, 0, -0.450428, 0, 0.450428, 0, 0.450428, 0, -1.96888e-08, -7.116, -0.03982, 9.32429)
+[node name="hanger_002" parent="ClosetItems/hangerClothes_5" index="0"]
+transform = Transform3D(0.0950233, 0, 1.33227e-15, 0, 0.844177, 0, 1.77636e-15, 0, 0.0464756, -0.00587082, -0.105541, 0.0359249)
 
-[node name="hanger_001" parent="ClosetItems/hangerClothes_2" index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_fn1jd")
+[node name="Cube" parent="ClosetItems/hangerClothes_5" index="1"]
+transform = Transform3D(0.311281, 0, 1.27898e-13, 0, 2.61331, 0, 1.06581e-14, 0, 1.0301, -0.00587082, -9.09941, -0.288422)
+surface_material_override/0 = SubResource("StandardMaterial3D_cyl07")
 
-[node name="Cube" parent="ClosetItems/hangerClothes_2" index="1"]
-transform = Transform3D(0.126069, 0, 7.10543e-15, 0, 0.286742, 0, 0, 0, 1.49428, -0.00587082, 7.17519, -0.0158119)
-surface_material_override/0 = SubResource("StandardMaterial3D_bjr64")
+[node name="hangerClothes_7" parent="ClosetItems" instance=ExtResource("17_vli8m")]
+transform = Transform3D(5.1119e-08, 0, 0.403546, 0, 0.247045, 0, -0.389822, 0, 5.29186e-08, -7.22574, 4.40509, 7.88887)
 
-[node name="hangerClothes_3" parent="ClosetItems" instance=ExtResource("19_jnffh")]
-transform = Transform3D(-1.95293e-08, 0, -0.446778, 0, 0.446778, 0, 0.446778, 0, -1.95293e-08, -7.10239, 0, 8.90115)
+[node name="hanger_002" parent="ClosetItems/hangerClothes_7" index="0"]
+transform = Transform3D(0.0950233, 0, 1.33227e-15, 0, 0.844177, 0, 1.77636e-15, 0, 0.0464756, -0.00587082, -0.105541, 0.0359249)
 
-[node name="hanger_002" parent="ClosetItems/hangerClothes_3" index="0"]
-transform = Transform3D(0.112563, 0, 0, 0, 1, 0, 0, 0, 0.112563, -0.00587082, 9.772, 0.420212)
-surface_material_override/0 = SubResource("StandardMaterial3D_ivwfu")
+[node name="Cube" parent="ClosetItems/hangerClothes_7" index="1"]
+transform = Transform3D(0.311281, 0, 1.27898e-13, 0, 2.61331, 0, 1.06581e-14, 0, 1.0301, -0.00587082, -9.09941, -0.288422)
+surface_material_override/0 = SubResource("StandardMaterial3D_cyl07")
+
+[node name="hangerClothes_3" parent="ClosetItems" instance=ExtResource("17_vli8m")]
+transform = Transform3D(-1.70397e-08, 0, -0.403546, 0, 0.269202, 0, 0.389822, 0, -1.76395e-08, -7.22574, 4.40509, 9.13881)
 
 [node name="Cube" parent="ClosetItems/hangerClothes_3" index="1"]
-surface_material_override/0 = SubResource("StandardMaterial3D_lb4gd")
+transform = Transform3D(0.257504, 0, -1.06581e-14, 0, 1.69108, 0, 1.77636e-15, 0, 1.12833, -0.00587082, -6.12298, -0.28842)
+surface_material_override/0 = SubResource("StandardMaterial3D_dcp8d")
+
+[node name="hangerClothes_2" parent="ClosetItems" instance=ExtResource("18_ndnx3")]
+transform = Transform3D(-1.05992e-08, 0, -0.242482, 0, 0.242482, 0, 0.242482, 0, -1.05992e-08, -7.24326, 4.40577, 8.52203)
+
+[node name="Cube_001" parent="ClosetItems/hangerClothes_2" index="1"]
+transform = Transform3D(0.126069, 0, -7.10543e-15, 0, 0.673953, 0, 0, 0, 1.77684, -0.0464935, -2.74394, -0.387024)
+surface_material_override/0 = SubResource("StandardMaterial3D_8781w")
+
+[node name="hangerClothes_4" parent="ClosetItems" instance=ExtResource("18_ndnx3")]
+transform = Transform3D(-1.05992e-08, 0, -0.242482, 0, 0.242482, 0, 0.242482, 0, -1.05992e-08, -7.24326, 4.40577, 8.32755)
+
+[node name="Cube_001" parent="ClosetItems/hangerClothes_4" index="1"]
+transform = Transform3D(0.126069, 0, -7.10543e-15, 0, 0.48327, 0, 0, 0, 1.77684, -0.0464935, -2.88205, -0.387024)
+surface_material_override/0 = SubResource("StandardMaterial3D_ffabj")
+
+[node name="hangerClothes_6" parent="ClosetItems" instance=ExtResource("18_ndnx3")]
+transform = Transform3D(-1.05992e-08, 0, -0.242482, 0, 0.242482, 0, 0.242482, 0, -1.05992e-08, -7.24326, 4.40577, 10.203)
+
+[node name="Cube_001" parent="ClosetItems/hangerClothes_6" index="1"]
+transform = Transform3D(0.251211, 0, -7.10543e-15, 0, 0.642707, 0, 0, 0, 1.92809, -0.0464897, -2.88205, -0.387024)
+surface_material_override/0 = SubResource("StandardMaterial3D_cls80")
 
 [node name="MButtons" parent="." instance=ExtResource("20_edq7e")]
 visible = false
@@ -1103,23 +1116,51 @@ one_shot = true
 transform = Transform3D(0.433423, 0.000272456, 0.121014, 0, 0.449999, -0.00101314, -0.121014, 0.000975823, 0.433421, -213.459, 1.39325, 52.1817)
 
 [node name="Skeleton3D" parent="Simon5/Armature" index="0"]
-bones/13/rotation = Quaternion(-0.4509, 0.0144563, 0.106787, 0.886046)
-bones/14/rotation = Quaternion(0.136, -0.0774608, 0.226783, 0.961287)
+bones/0/position = Vector3(-2.62893e-07, 0.726913, 1.83233)
+bones/1/rotation = Quaternion(0.106281, -0.0539872, 0.0767518, 0.989898)
+bones/2/rotation = Quaternion(-0.145454, -0.000119831, -0.0982725, 0.984472)
+bones/3/rotation = Quaternion(0.179616, 0.316123, -0.194066, 0.911122)
+bones/4/rotation = Quaternion(-0.368329, 0.000109034, 0.248852, 0.895772)
+bones/5/position = Vector3(-2.81615e-07, 0.726913, 1.83233)
+bones/7/rotation = Quaternion(-4.70698e-13, -2.84217e-14, -3.47715e-13, 1)
+bones/8/rotation = Quaternion(0.0622785, 2.50255e-14, 2.02931e-08, 0.998059)
+bones/9/rotation = Quaternion(0.0539717, 0.161458, 0.75569, 0.632417)
+bones/10/rotation = Quaternion(-0.12938, 0.0116988, 0.490736, 0.86157)
+bones/11/rotation = Quaternion(-0.794986, -0.00563202, 0.497705, 0.346778)
+bones/12/rotation = Quaternion(0.0375651, 1.30977e-07, 3.66737e-08, 0.999294)
+bones/13/rotation = Quaternion(-0.266404, 0.610669, -0.0368017, 0.744821)
+bones/14/rotation = Quaternion(0.388359, -0.614799, 0.089164, 0.680624)
+bones/19/position = Vector3(0.600877, 1.83959, -0.0922001)
+bones/19/rotation = Quaternion(0.0603591, -0.147084, -0.688546, 0.707551)
+bones/20/rotation = Quaternion(-0.0620357, -0.046912, -0.654698, 0.751879)
+bones/21/rotation = Quaternion(-0.921504, -1.67104e-08, -5.04603e-06, 0.388369)
+bones/22/position = Vector3(0.980632, 0.655289, -4.68203)
+bones/22/rotation = Quaternion(0.00693137, -0.932888, -0.35965, 0.0179791)
+bones/24/position = Vector3(0.941964, -0.157599, -1.95692)
+bones/25/position = Vector3(1.23162, 0.130029, 4.09483)
+bones/25/rotation = Quaternion(-0.698619, -0.689379, 0.141796, 0.128773)
+bones/42/position = Vector3(1.16041, 1.39422, 1.51383)
+bones/43/position = Vector3(-1.01629, 0.673089, -4.16108)
+bones/43/rotation = Quaternion(-0.00691273, -0.933267, -0.358667, -0.0179862)
+bones/45/position = Vector3(-2.17713, -0.872601, -0.334582)
+bones/46/position = Vector3(-1.7223, -0.0164642, 4.24704)
+bones/46/rotation = Quaternion(0.683698, -0.670888, 0.219577, -0.185072)
+bones/63/position = Vector3(-1.91653, 1.29073, 1.707)
 
 [node name="caucasian-low_poly" parent="Simon5/Armature/Skeleton3D" index="0"]
-transform = Transform3D(-0.627055, -0.77897, 0.002766, 0.297346, -0.242636, -0.923425, 0.719991, -0.578216, 0.38377, 0.564846, 2.93614, 6.40419)
+transform = Transform3D(-0.987704, -0.148528, -0.0487878, 0.123016, -0.545797, -0.828838, 0.0964776, -0.824649, 0.557357, -0.000546724, 0.854961, 6.75684)
 
 [node name="caucasian-short04" parent="Simon5/Armature/Skeleton3D" index="1"]
-transform = Transform3D(-0.627055, -0.77897, 0.002766, 0.297346, -0.242636, -0.923425, 0.719991, -0.578216, 0.38377, 0.660248, 3.63934, 6.2298)
+transform = Transform3D(-0.987704, -0.148528, -0.0487878, 0.123016, -0.545797, -0.828838, 0.0964776, -0.824649, 0.557357, 0.0323653, 1.52998, 6.47889)
 
 [node name="caucasian-short04" parent="Simon5/Armature/Skeleton3D/caucasian-short04" index="0"]
 transform = Transform3D(1, 0, 1.11759e-08, -7.45058e-09, 1, -2.98023e-08, 3.72529e-09, 0, 1, 0, 0, 0)
 
 [node name="caucasian-teeth_base" parent="Simon5/Armature/Skeleton3D" index="2"]
-transform = Transform3D(-0.627055, -0.77897, 0.002766, 0.297346, -0.242636, -0.923425, 0.719991, -0.578216, 0.38377, 0.281483, 2.83415, 6.07095)
+transform = Transform3D(-0.987704, -0.148528, -0.0487878, 0.123016, -0.545797, -0.828838, 0.0964776, -0.824649, 0.557357, 0.0274927, 0.633008, 6.36735)
 
 [node name="caucasian-tongue01" parent="Simon5/Armature/Skeleton3D" index="3"]
-transform = Transform3D(-0.627055, -0.77897, 0.002766, 0.297346, -0.242636, -0.923425, 0.719991, -0.578216, 0.38377, 0.0251927, 2.8886, 5.66396)
+transform = Transform3D(-0.987704, -0.148528, -0.0487878, 0.123016, -0.545797, -0.828838, 0.0964776, -0.824649, 0.557357, 0.0896591, 0.560246, 5.89287)
 
 [node name="Jumpscare" parent="Simon5" index="4"]
 volume_db = 5.0
@@ -1163,7 +1204,11 @@ volume_db = -5.0
 [editable path="CeilingFan"]
 [editable path="RoomCloset"]
 [editable path="ClosetItems/hangerClothes_1"]
-[editable path="ClosetItems/hangerClothes_2"]
+[editable path="ClosetItems/hangerClothes_5"]
+[editable path="ClosetItems/hangerClothes_7"]
 [editable path="ClosetItems/hangerClothes_3"]
+[editable path="ClosetItems/hangerClothes_2"]
+[editable path="ClosetItems/hangerClothes_4"]
+[editable path="ClosetItems/hangerClothes_6"]
 [editable path="MButtons"]
 [editable path="Simon5"]

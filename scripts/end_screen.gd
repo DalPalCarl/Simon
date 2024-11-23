@@ -12,7 +12,7 @@ func _ready():
 		minutes.text = "1 minute"
 	else:
 		minutes.text = str(snapped(minuteVal, 1)) + " minutes"
-	seconds.text = str(snappedf(Score.score, 0.01)) + " seconds"
+	seconds.text = str(snappedf(secondVal, 0.01)) + " seconds"
 
-func _on_animation_player_animation_finished(anim_name):
+func _on_animation_player_animation_finished(_anim_name):
 	get_tree().change_scene_to_file("res://scenes/mainMenu.tscn")

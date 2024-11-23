@@ -92,14 +92,14 @@ func state_transition(prev_state : States, new_state : States):
 			simon_state = new_state
 			environment.play("droneFadeOut")
 		else:
-			simon_state == States.SCARE
+			simon_state = States.SCARE
 			mvmtTimer.stop()
 			primedTimer.stop()
 			drone.stop()
 			hideMButtons()
 			if player_pos == 1 or player_pos == 0:
 				if randf() >= 0.5:
-					memory_game.paused == true
+					memory_game.paused = true
 			player_death()
 
 func _on_left_pressed():
@@ -158,6 +158,11 @@ func monster_move():
 		#simon.position = corners[monster_pos].position
 		simon.anim_update(player_pos, monster_pos)
 		at_player_position()
+	
+	# Distance from player: 0
+	else:
+		state_transition(simon_state, States.SCARE)
+		player_death()
 
 func at_player_position():
 	# Distance from player: 0
@@ -173,6 +178,7 @@ func _on_environment_animation_finished(anim_name):
 func player_death():
 	memory_game.paused = true
 	mvmtTimer.stop()
+	
 	jumpscare.emit()
 	dead = true
 

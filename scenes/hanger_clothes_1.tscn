@@ -1,5 +1,11 @@
 [gd_scene load_steps=2 format=3 uid="uid://bvikqa1xt61um"]
 
-[ext_resource type="PackedScene" uid="uid://dctwurgxlajmk" path="res://assets/imports/hangerClothes_1.glb" id="1_e7eqk"]
+[ext_resource type="PackedScene" uid="uid://e8ptpd2aw8lx" path="res://assets/imports/hangerClothes_1.glb" id="1_e7eqk"]
 
 [node name="hangerClothes_1" instance=ExtResource("1_e7eqk")]
+
+[node name="hanger_002" parent="." index="0"]
+transform = Transform3D(0.0950233, 0, 0, 0, 0.844177, 0, 0, 0, 0.0884408, -0.00587067, -0.105545, 0.0359259)
+
+[node name="Cube" parent="." index="1"]
+transform = Transform3D(0.142231, 0, 0, 0, 1, 0, 0, 0, 0.895981, -0.00587067, -4.24579, -0.28842)
