@@ -1,7 +1,7 @@
 extends Node3D
 
 signal playerFail
-@onready var audioCues = $AudioCues
+@onready var audioCues = $Armature/AudioCues
 @onready var anim_player = $AnimationPlayer
 @onready var names = ["Corner", "Bookshelf", "Bed", "Closet"]
 @onready var scareCam : Camera3D = $Camera3D
@@ -10,6 +10,7 @@ signal playerFail
 
 @onready var mLocations : Node3D = get_parent().get_node("MonsterLocations")
 @onready var bc_primer : Node3D = mLocations.get_node("BackCorner_primer")
+@onready var bc_special : Node3D = mLocations.get_node("BackCorner_specialScare")
 @onready var bc_left : Node3D = mLocations.get_node("BackCorner_left")
 @onready var bc_right : Node3D = mLocations.get_node("BackCorner_right")
 @onready var bc_opp : Node3D = mLocations.get_node("BackCorner_opp")
@@ -104,12 +105,8 @@ func _on_world_jumpscare():
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "Jumpscare":
 		get_tree().change_scene_to_file("res://scenes/end_screen.tscn")
-
-func _on_world_jumpscare_01():
-	anim_player.play("crawling")
-	await get_tree().create_timer(2.0).timeout
-	anim_player.stop()
-	jumpscare()
+	elif anim_name == "crawling":
+		jumpscare()
 
 func jumpscare():
 	playerFail.emit()
@@ -118,3 +115,9 @@ func jumpscare():
 	jsSound.play()
 	anim_player.play("Jumpscare")
 	Score.checkScore(get_parent().timeSurvived)
+
+func crawling_scare(pos : int):
+	if pos == 0:
+		self.position = bc_special.position
+		self.rotation = bc_special.rotation
+		anim_player.play("crawling")

@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbfm1gd6q0bj3"]
+
+[ext_resource type="PackedScene" uid="uid://tcqmqsrtf8sn" path="res://assets/imports/TVStand.glb" id="1_fr53l"]
+[ext_resource type="Material" uid="uid://cewlbwrxldk8q" path="res://materials/veneer.tres" id="2_n0xvl"]
+
+[node name="TVStand" instance=ExtResource("1_fr53l")]
+
+[node name="Table" parent="." index="0"]
+material_override = ExtResource("2_n0xvl")

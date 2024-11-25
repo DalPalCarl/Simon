@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://cth2k0gheo1q1" path="res://assets/audio/tone2.wav" id="3_7s0ll"]
 [ext_resource type="AudioStream" uid="uid://bjdnvk0rvv5q" path="res://assets/audio/tone3.wav" id="4_bsepl"]
 [ext_resource type="AudioStream" uid="uid://c5m2rkxb4dydw" path="res://assets/audio/tone4.wav" id="5_nb37a"]
-[ext_resource type="AudioStream" uid="uid://bpo4ewptyv1ju" path="res://assets/audio/failSound.wav" id="6_ckerb"]
+[ext_resource type="AudioStream" uid="uid://sux0jnktgfco" path="res://assets/audio/failSound.wav" id="6_ckerb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_21bcp"]
 albedo_color = Color(0, 1, 0, 1)

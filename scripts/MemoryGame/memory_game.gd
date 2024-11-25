@@ -36,11 +36,11 @@ func display_sequence():
 	get_parent().hideMButtons()
 	displaying = true
 	player_sequence.clear()
-	seq_timer.start(1.0)
+	seq_timer.start(1.5)
 	for i in range(sequence.size()):
 		if paused:
 			break
-		await get_tree().create_timer(1.5).timeout
+		await get_tree().create_timer(1.0).timeout
 		anim_Player.play(sequence[i])
 		emitLight.emit()
 	await get_tree().create_timer(0.5).timeout
@@ -63,7 +63,7 @@ func failstate():
 	fail.emit()
 	$failSound.play()
 	displaying = true
-	await get_tree().create_timer(2.0).timeout
+	await get_tree().create_timer(2.5).timeout
 	sequence.clear()
 	player_sequence.clear()
 	start_new_round()
@@ -108,3 +108,10 @@ func _on_world_begin_hell():
 	sequence.clear()
 	player_sequence.clear()
 	start_new_round()
+
+func special_scare():
+	paused = true
+	displaying = true
+	await get_tree().create_timer(6.0 + randf_range(0.0, 7.0)).timeout
+	anim_Player.play("R")
+	emitLight.emit()

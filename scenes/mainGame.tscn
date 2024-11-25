@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://onmbwuntaimy"]
+[gd_scene load_steps=60 format=3 uid="uid://onmbwuntaimy"]
 
 [ext_resource type="Script" path="res://scripts/mainGame.gd" id="1_i4lp5"]
 [ext_resource type="PackedScene" uid="uid://b2uj1lcwbi3ld" path="res://scenes/memory_game.tscn" id="2_8jt08"]
@@ -35,8 +35,10 @@
 [ext_resource type="PackedScene" uid="uid://bsn74b4kxy1wg" path="res://scenes/dresser_2.tscn" id="35_vjj7k"]
 [ext_resource type="PackedScene" uid="uid://dtrldssrjkoj2" path="res://scenes/nightstand_2.tscn" id="36_2isf6"]
 [ext_resource type="PackedScene" uid="uid://btbchwji6j0eo" path="res://scenes/simon.tscn" id="36_mydiu"]
+[ext_resource type="PackedScene" uid="uid://cbfm1gd6q0bj3" path="res://scenes/tv_stand.tscn" id="38_8u7fk"]
 [ext_resource type="AudioStream" uid="uid://jhg28h55t8ob" path="res://assets/audio/stringsHeartbeatDrone.wav" id="38_f6nh6"]
 [ext_resource type="FontFile" uid="uid://chg6m7xvmv0ha" path="res://assets/fonts/sixCaps.ttf" id="38_mqu1i"]
+[ext_resource type="PackedScene" uid="uid://5i87sjxk48ds" path="res://scenes/tv.tscn" id="39_8fr2d"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pexgn"]
 emission_enabled = true
@@ -889,7 +891,7 @@ transform = Transform3D(1, 0, 1.42109e-14, 0, 0.0150806, 0, 0, 0, 1.648, 0, 0.24
 transform = Transform3D(1, 0, 7.10543e-15, 0, 0.0150806, 0, 0, 0, 1.648, 0, 1.8703, 0.410513)
 
 [node name="Radio" parent="." instance=ExtResource("11_i0ahn")]
-transform = Transform3D(0.070786, 0, -0.344111, 0, 0.351316, 0, 0.344111, 0, 0.070786, 3.85886, 0.396725, -1.21404)
+transform = Transform3D(-0.34346, 0, -0.0738821, 0, 0.351316, 0, 0.0738821, 0, -0.34346, 9.1418, 2.66697, 2.69883)
 
 [node name="CeilingFan" parent="." instance=ExtResource("12_j33cc")]
 transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -1.7633, 7.86854, -1.83641)
@@ -1035,6 +1037,9 @@ libraries = {
 [node name="BackCorner_primer" type="Node3D" parent="MonsterLocations"]
 transform = Transform3D(0.80799, 0, 0.589196, 0, 1, 0, -0.589196, 0, 0.80799, 3.66477, -0.249264, 1.85294)
 
+[node name="BackCorner_specialScare" type="Node3D" parent="MonsterLocations"]
+transform = Transform3D(0.80799, 0, 0.589196, 0, 1, 0, -0.589196, 0, 0.80799, 3.66477, 0.0248984, 1.85294)
+
 [node name="BackCorner_left" type="Node3D" parent="MonsterLocations"]
 transform = Transform3D(0.15471, 0, 0.98796, 0, 1, 0, -0.98796, 0, 0.15471, -2.03769, 0.046218, 8.8774)
 
@@ -1113,54 +1118,22 @@ wait_time = 6.0
 one_shot = true
 
 [node name="Simon5" parent="." instance=ExtResource("36_mydiu")]
-transform = Transform3D(0.433423, 0.000272456, 0.121014, 0, 0.449999, -0.00101314, -0.121014, 0.000975823, 0.433421, -213.459, 1.39325, 52.1817)
-
-[node name="Skeleton3D" parent="Simon5/Armature" index="0"]
-bones/0/position = Vector3(-2.62893e-07, 0.726913, 1.83233)
-bones/1/rotation = Quaternion(0.106281, -0.0539872, 0.0767518, 0.989898)
-bones/2/rotation = Quaternion(-0.145454, -0.000119831, -0.0982725, 0.984472)
-bones/3/rotation = Quaternion(0.179616, 0.316123, -0.194066, 0.911122)
-bones/4/rotation = Quaternion(-0.368329, 0.000109034, 0.248852, 0.895772)
-bones/5/position = Vector3(-2.81615e-07, 0.726913, 1.83233)
-bones/7/rotation = Quaternion(-4.70698e-13, -2.84217e-14, -3.47715e-13, 1)
-bones/8/rotation = Quaternion(0.0622785, 2.50255e-14, 2.02931e-08, 0.998059)
-bones/9/rotation = Quaternion(0.0539717, 0.161458, 0.75569, 0.632417)
-bones/10/rotation = Quaternion(-0.12938, 0.0116988, 0.490736, 0.86157)
-bones/11/rotation = Quaternion(-0.794986, -0.00563202, 0.497705, 0.346778)
-bones/12/rotation = Quaternion(0.0375651, 1.30977e-07, 3.66737e-08, 0.999294)
-bones/13/rotation = Quaternion(-0.266404, 0.610669, -0.0368017, 0.744821)
-bones/14/rotation = Quaternion(0.388359, -0.614799, 0.089164, 0.680624)
-bones/19/position = Vector3(0.600877, 1.83959, -0.0922001)
-bones/19/rotation = Quaternion(0.0603591, -0.147084, -0.688546, 0.707551)
-bones/20/rotation = Quaternion(-0.0620357, -0.046912, -0.654698, 0.751879)
-bones/21/rotation = Quaternion(-0.921504, -1.67104e-08, -5.04603e-06, 0.388369)
-bones/22/position = Vector3(0.980632, 0.655289, -4.68203)
-bones/22/rotation = Quaternion(0.00693137, -0.932888, -0.35965, 0.0179791)
-bones/24/position = Vector3(0.941964, -0.157599, -1.95692)
-bones/25/position = Vector3(1.23162, 0.130029, 4.09483)
-bones/25/rotation = Quaternion(-0.698619, -0.689379, 0.141796, 0.128773)
-bones/42/position = Vector3(1.16041, 1.39422, 1.51383)
-bones/43/position = Vector3(-1.01629, 0.673089, -4.16108)
-bones/43/rotation = Quaternion(-0.00691273, -0.933267, -0.358667, -0.0179862)
-bones/45/position = Vector3(-2.17713, -0.872601, -0.334582)
-bones/46/position = Vector3(-1.7223, -0.0164642, 4.24704)
-bones/46/rotation = Quaternion(0.683698, -0.670888, 0.219577, -0.185072)
-bones/63/position = Vector3(-1.91653, 1.29073, 1.707)
+transform = Transform3D(0.363595, 0, 0.265138, 0, 0.45, 0, -0.265138, 0, 0.363595, -34.8231, 0.0248984, 32.805)
 
 [node name="caucasian-low_poly" parent="Simon5/Armature/Skeleton3D" index="0"]
-transform = Transform3D(-0.987704, -0.148528, -0.0487878, 0.123016, -0.545797, -0.828838, 0.0964776, -0.824649, 0.557357, -0.000546724, 0.854961, 6.75684)
+transform = Transform3D(-0.993004, -0.0168687, 0.116867, 0.00385326, -0.993845, -0.110712, 0.118015, -0.109487, 0.986957, -0.14641, 4.29781, 6.15272)
 
 [node name="caucasian-short04" parent="Simon5/Armature/Skeleton3D" index="1"]
-transform = Transform3D(-0.987704, -0.148528, -0.0487878, 0.123016, -0.545797, -0.828838, 0.0964776, -0.824649, 0.557357, 0.0323653, 1.52998, 6.47889)
+transform = Transform3D(-0.993004, -0.0168687, 0.116867, 0.00385326, -0.993845, -0.110712, 0.118015, -0.109487, 0.986957, -0.251206, 4.52039, 5.46463)
 
 [node name="caucasian-short04" parent="Simon5/Armature/Skeleton3D/caucasian-short04" index="0"]
 transform = Transform3D(1, 0, 1.11759e-08, -7.45058e-09, 1, -2.98023e-08, 3.72529e-09, 0, 1, 0, 0, 0)
 
 [node name="caucasian-teeth_base" parent="Simon5/Armature/Skeleton3D" index="2"]
-transform = Transform3D(-0.987704, -0.148528, -0.0487878, 0.123016, -0.545797, -0.828838, 0.0964776, -0.824649, 0.557357, 0.0274927, 0.633008, 6.36735)
+transform = Transform3D(-0.993004, -0.0168687, 0.116867, 0.00385326, -0.993845, -0.110712, 0.118015, -0.109487, 0.986957, -0.0659041, 3.8658, 6.05979)
 
 [node name="caucasian-tongue01" parent="Simon5/Armature/Skeleton3D" index="3"]
-transform = Transform3D(-0.987704, -0.148528, -0.0487878, 0.123016, -0.545797, -0.828838, 0.0964776, -0.824649, 0.557357, 0.0896591, 0.560246, 5.89287)
+transform = Transform3D(-0.993004, -0.0168687, 0.116867, 0.00385326, -0.993845, -0.110712, 0.118015, -0.109487, 0.986957, 0.018086, 3.46913, 5.79543)
 
 [node name="Jumpscare" parent="Simon5" index="4"]
 volume_db = 5.0
@@ -1169,9 +1142,14 @@ volume_db = 5.0
 stream = ExtResource("38_f6nh6")
 volume_db = -5.0
 
+[node name="TVStand" parent="." instance=ExtResource("38_8u7fk")]
+transform = Transform3D(-2.52575, 0, -1.80811e-07, 0, 2.66555, 0, 2.20808e-07, 0, -2.06824, 9.83455, 0, 1.07153)
+
+[node name="TV" parent="." instance=ExtResource("39_8fr2d")]
+transform = Transform3D(-9.88872e-08, 0, -2.26228, 0, 2.26228, 0, 2.26228, 0, -9.88872e-08, 10.0066, 3.18716, 1.08074)
+
 [connection signal="beginHell" from="." to="MemoryGame" method="_on_world_begin_hell"]
 [connection signal="jumpscare" from="." to="Simon5" method="_on_world_jumpscare"]
-[connection signal="jumpscare_01" from="." to="Simon5" method="_on_world_jumpscare_01"]
 [connection signal="emitLight" from="MemoryGame" to="." method="_on_memory_game_emit_light"]
 [connection signal="fail" from="MemoryGame" to="." method="_on_memory_game_fail"]
 [connection signal="greenPressed" from="MemoryGame/buttonGreen" to="MemoryGame" method="_on_button_green_green_pressed"]

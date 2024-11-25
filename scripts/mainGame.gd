@@ -3,7 +3,7 @@ extends Node3D
 signal beginHell
 signal moveSimon
 signal jumpscare
-signal jumpscare_01
+
 @onready var simon = $Simon5
 @onready var timerScore : Label = $timerLabel/TimerScore
 @onready var testLabel : Label = $timerLabel/TestLabel
@@ -98,9 +98,12 @@ func state_transition(prev_state : States, new_state : States):
 			drone.stop()
 			hideMButtons()
 			if player_pos == 1 or player_pos == 0:
-				if randf() >= 0.5:
-					memory_game.paused = true
-			player_death()
+				if randf() >= 0:
+					mvmtTimer.stop()
+					memory_game.special_scare()
+					dead = true
+				else:
+					player_death()
 
 func _on_left_pressed():
 	if simon_state == States.PRIMED:
@@ -178,7 +181,6 @@ func _on_environment_animation_finished(anim_name):
 func player_death():
 	memory_game.paused = true
 	mvmtTimer.stop()
-	
 	jumpscare.emit()
 	dead = true
 
@@ -224,16 +226,13 @@ func _on_movement_timer_timeout():
 	
 
 func _on_memory_game_emit_light():
-	isLit = true
-	if simon_state == States.SCARE:
-		if player_pos == 1 or player_pos == 0:
-			memory_game.paused = true
-			jumpscare_01.emit()
-			dead = true
-	else:
+	if !dead:
+		isLit = true
 		mvmtTimer.start(6.0)
-	await get_tree().create_timer(1.0).timeout
-	isLit = false
+		await get_tree().create_timer(1.0).timeout
+		isLit = false
+	else:
+		simon.crawling_scare(player_pos)
 
 func hideMButtons():
 	movement_buttons.hide()

@@ -1,0 +1,20 @@
+[gd_resource type="AudioStreamRandomizer" load_steps=6 format=3 uid="uid://bf6b5egqe65w4"]
+
+[ext_resource type="AudioStream" uid="uid://moqulryn3mdc" path="res://assets/audio/foley/handstomps/bfs1.wav" id="1_ybnvj"]
+[ext_resource type="AudioStream" uid="uid://8m6pbq54ihab" path="res://assets/audio/foley/handstomps/bfs2.wav" id="2_6mikb"]
+[ext_resource type="AudioStream" uid="uid://dp2lgkuqaj525" path="res://assets/audio/foley/handstomps/bfs3.wav" id="3_nm7us"]
+[ext_resource type="AudioStream" uid="uid://c88ac3v57iem" path="res://assets/audio/foley/handstomps/bfs4.wav" id="4_s7vbp"]
+[ext_resource type="AudioStream" uid="uid://ykdjeyu6ebbb" path="res://assets/audio/foley/handstomps/bfs5.wav" id="5_gjaxl"]
+
+[resource]
+streams_count = 5
+stream_0/stream = ExtResource("1_ybnvj")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("2_6mikb")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("3_nm7us")
+stream_2/weight = 1.0
+stream_3/stream = ExtResource("4_s7vbp")
+stream_3/weight = 1.0
+stream_4/stream = ExtResource("5_gjaxl")
+stream_4/weight = 1.0
