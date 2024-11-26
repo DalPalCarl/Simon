@@ -1,0 +1,202 @@
+[gd_scene load_steps=16 format=3 uid="uid://82h81cycnaif"]
+
+[ext_resource type="PackedScene" uid="uid://ctnluwbjnl3no" path="res://assets/imports/Room.glb" id="1_pgisi"]
+[ext_resource type="Script" path="res://scripts/menuRoom.gd" id="2_f3ksc"]
+[ext_resource type="Script" path="res://scripts/mainMenu.gd" id="3_i5cw6"]
+[ext_resource type="PackedScene" uid="uid://b2uj1lcwbi3ld" path="res://scenes/memory_game.tscn" id="3_l5hik"]
+[ext_resource type="FontFile" uid="uid://chg6m7xvmv0ha" path="res://assets/fonts/sixCaps.ttf" id="4_qptve"]
+[ext_resource type="Theme" uid="uid://0dmgiw4d0e7" path="res://themes/button_theme.tres" id="5_mn7nl"]
+[ext_resource type="FontFile" uid="uid://b08nli31i5uvk" path="res://assets/fonts/Chakra.ttf" id="6_bmmtm"]
+[ext_resource type="AudioStream" uid="uid://c2r2fjfguewpk" path="res://assets/audio/menuMusic.wav" id="7_bryit"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mt7i3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5jupj"]
+albedo_texture = SubResource("CompressedTexture2D_mt7i3")
+
+[sub_resource type="Environment" id="Environment_kmmjr"]
+background_mode = 3
+reflected_light_source = 1
+tonemap_exposure = 0.2
+tonemap_white = 13.56
+glow_enabled = true
+glow_strength = 2.0
+fog_enabled = true
+fog_light_energy = 1.84
+fog_density = 0.0
+volumetric_fog_density = 0.6576
+volumetric_fog_albedo = Color(0.237539, 0.237539, 0.237539, 1)
+
+[sub_resource type="Animation" id="Animation_iu3gd"]
+resource_name = "fadeIn"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Blackout:color")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Music:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 0.5),
+"update": 0,
+"values": [-30.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_avl0q"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Blackout:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_55d15"]
+resource_name = "fadeOut"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Blackout:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Music:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.6),
+"transitions": PackedFloat32Array(4.28708, 1),
+"update": 0,
+"values": [0.0, -50.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1ihy1"]
+_data = {
+"RESET": SubResource("Animation_avl0q"),
+"fadeIn": SubResource("Animation_iu3gd"),
+"fadeOut": SubResource("Animation_55d15")
+}
+
+[node name="Room" instance=ExtResource("1_pgisi")]
+script = ExtResource("2_f3ksc")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="0"]
+
+[node name="Control" type="Control" parent="CanvasLayer" index="0"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_i5cw6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control" index="0"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 328.0
+grow_vertical = 2
+
+[node name="SimonTitle" type="Label" parent="CanvasLayer/Control/VBoxContainer" index="0"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("4_qptve")
+theme_override_font_sizes/font_size = 186
+text = "Simon"
+
+[node name="Start" type="Button" parent="CanvasLayer/Control/VBoxContainer" index="1"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("5_mn7nl")
+theme_override_font_sizes/font_size = 31
+text = "Start Game"
+
+[node name="Exit" type="Button" parent="CanvasLayer/Control/VBoxContainer" index="2"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("5_mn7nl")
+theme_override_font_sizes/font_size = 31
+text = "Exit"
+
+[node name="Credits" type="Label" parent="CanvasLayer/Control" index="1"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 57.0
+offset_top = -166.0
+offset_right = 276.0
+offset_bottom = -49.0
+grow_vertical = 0
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("6_bmmtm")
+text = "Credits:
+Programming/Design - DalPal
+Animation - DalPal
+Sounds/Music - ZapSplat
+Art - TurboSquid
+"
+horizontal_alignment = 1
+
+[node name="Blackout" type="ColorRect" parent="CanvasLayer" index="1"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Door" parent="." index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_5jupj")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="7"]
+environment = SubResource("Environment_kmmjr")
+
+[node name="Camera3D" type="Camera3D" parent="." index="8"]
+transform = Transform3D(-0.595776, 0.300852, -0.744673, 0, 0.92719, 0.37459, 0.80315, 0.223172, -0.552398, 6.4772, 1.8942, 5.76918)
+
+[node name="MemoryGame" parent="." index="9" instance=ExtResource("3_l5hik")]
+transform = Transform3D(0.783531, 0, -0.621353, 0, 1, 0, 0.621353, 0, 0.783531, 7.99568, 0.192137, 8.28692)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="10"]
+libraries = {
+"": SubResource("AnimationLibrary_1ihy1")
+}
+
+[node name="Music" type="AudioStreamPlayer" parent="." index="11"]
+stream = ExtResource("7_bryit")
+autoplay = true
+
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

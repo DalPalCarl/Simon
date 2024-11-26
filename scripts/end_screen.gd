@@ -15,4 +15,4 @@ func _ready():
 	seconds.text = str(snappedf(secondVal, 0.01)) + " seconds"
 
 func _on_animation_player_animation_finished(_anim_name):
-	get_tree().change_scene_to_file("res://scenes/mainMenu.tscn")
+	get_tree().change_scene_to_file("res://scenes/menuRoom.tscn")

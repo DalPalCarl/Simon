@@ -1,6 +1,7 @@
 [gd_resource type="Theme" load_steps=2 format=3 uid="uid://0dmgiw4d0e7"]
 
-[ext_resource type="FontFile" uid="uid://b08nli31i5uvk" path="res://assets/fonts/Chakra.ttf" id="1_8fbqm"]
+[ext_resource type="FontFile" uid="uid://chg6m7xvmv0ha" path="res://assets/fonts/sixCaps.ttf" id="1_uoynt"]
 
 [resource]
-Button/fonts/font = ExtResource("1_8fbqm")
+Button/colors/font_hover_color = Color(0.81502, 3.58574e-06, 7.70092e-07, 1)
+Button/fonts/font = ExtResource("1_uoynt")

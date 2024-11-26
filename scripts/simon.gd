@@ -15,15 +15,18 @@ signal playerFail
 @onready var bc_right : Node3D = mLocations.get_node("BackCorner_right")
 @onready var bc_opp : Node3D = mLocations.get_node("BackCorner_opp")
 @onready var bs_primer : Node3D = mLocations.get_node("Bookshelf_primer")
+@onready var bs_special : Node3D = mLocations.get_node("Bookshelf_specialScare")
 @onready var bs_left : Node3D = mLocations.get_node("Bookshelf_left")
 @onready var bs_right : Node3D = mLocations.get_node("Bookshelf_right")
 @onready var bs_opp : Node3D = mLocations.get_node("Bookshelf_opp")
 @onready var bed_primer : Node3D = mLocations.get_node("Bed_primer")
+@onready var bed_special : Node3D = mLocations.get_node("Bed_specialScare")
 @onready var bed_left : Node3D = mLocations.get_node("Bed_left")
 @onready var bed_right : Node3D = mLocations.get_node("Bed_right")
 @onready var bed_opp : Node3D = mLocations.get_node("Bed_opp")
 @onready var c_primer : Node3D = mLocations.get_node("Closet_primer")
 @onready var c_right : Node3D = mLocations.get_node("Closet_right")
+@onready var c_special : Node3D = mLocations.get_node("Closet_specialScare")
 
 func _ready():
 	pass
@@ -105,7 +108,7 @@ func _on_world_jumpscare():
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "Jumpscare":
 		get_tree().change_scene_to_file("res://scenes/end_screen.tscn")
-	elif anim_name == "crawling":
+	elif anim_name == "crawling" or anim_name == "closet_specialScare" or anim_name == "bed_specialScare":
 		jumpscare()
 
 func jumpscare():
@@ -116,8 +119,20 @@ func jumpscare():
 	anim_player.play("Jumpscare")
 	Score.checkScore(get_parent().timeSurvived)
 
-func crawling_scare(pos : int):
+func special_scare(pos : int):
 	if pos == 0:
 		self.position = bc_special.position
 		self.rotation = bc_special.rotation
 		anim_player.play("crawling")
+	elif pos == 1:
+		self.position = bs_special.position
+		self.rotation = bs_special.rotation
+		anim_player.play("crawling")
+	elif pos == 2:
+		self.position = bed_special.position
+		self.rotation = bed_special.rotation
+		anim_player.play("bed_specialScare")
+	else:
+		self.position = c_special.position
+		self.rotation = c_special.rotation
+		anim_player.play("closet_specialScare")

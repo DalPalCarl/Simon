@@ -8,6 +8,7 @@ signal jumpscare
 @onready var timerScore : Label = $timerLabel/TimerScore
 @onready var testLabel : Label = $timerLabel/TestLabel
 @onready var testMvmtTimer : Label = $timerLabel/TestMvmtTimer
+@onready var testMvmtTime : Label = $timerLabel/mvmtTime
 @onready var memory_game = $MemoryGame
 @onready var radio = $Radio
 @onready var movement_buttons : CanvasLayer = $MButtons
@@ -20,6 +21,8 @@ signal jumpscare
 @onready var closet = $CornerPositions/Closet
 
 @onready var mvmtTimer : Timer = $MovementTimer
+var simonMoveTime : float = 6.0
+@onready var difficultyIncTimer : Timer = $DifficultyIncrease
 @onready var primedTimer : Timer = $PrimedTimer
 @onready var footsteps : AudioStreamPlayer = $footsteps
 
@@ -78,11 +81,13 @@ func _process(delta):
 	
 	testLabel.text = str(simon_state)
 	testMvmtTimer.text = str(mvmtTimer.time_left)
+	testMvmtTime.text = str(simonMoveTime)
 
 func state_transition(prev_state : States, new_state : States):
 	if prev_state == States.INACTIVE:
 		simon_state = States.ACTIVE
-		mvmtTimer.start(6.0)
+		mvmtTimer.start(simonMoveTime)
+		difficultyIncTimer.start()
 	elif prev_state == States.ACTIVE:
 		simon_state = new_state
 		drone.play()
@@ -97,13 +102,12 @@ func state_transition(prev_state : States, new_state : States):
 			primedTimer.stop()
 			drone.stop()
 			hideMButtons()
-			if player_pos == 1 or player_pos == 0:
-				if randf() >= 0:
-					mvmtTimer.stop()
-					memory_game.special_scare()
-					dead = true
-				else:
-					player_death()
+			if randf() >= 0:
+				mvmtTimer.stop()
+				memory_game.special_scare()
+				dead = true
+			else:
+				player_death()
 
 func _on_left_pressed():
 	if simon_state == States.PRIMED:
@@ -176,7 +180,7 @@ func at_player_position():
 func _on_environment_animation_finished(anim_name):
 	if anim_name == "droneFadeOut":
 		drone.stop()
-		drone.volume_db = -5
+		drone.volume_db = -18
 
 func player_death():
 	memory_game.paused = true
@@ -219,8 +223,9 @@ func _on_memory_game_fail():
 
 func _on_movement_timer_timeout():
 	if simon_state == States.ACTIVE:
-		monster_move()
-		mvmtTimer.start(6.0)
+		if !isLit:
+			monster_move()
+			mvmtTimer.start(simonMoveTime)
 	elif simon_state == States.PRIMED:
 		state_transition(simon_state, States.SCARE)
 	
@@ -228,11 +233,11 @@ func _on_movement_timer_timeout():
 func _on_memory_game_emit_light():
 	if !dead:
 		isLit = true
-		mvmtTimer.start(6.0)
+		mvmtTimer.start(simonMoveTime)
 		await get_tree().create_timer(1.0).timeout
 		isLit = false
 	else:
-		simon.crawling_scare(player_pos)
+		simon.special_scare(player_pos)
 
 func hideMButtons():
 	movement_buttons.hide()
@@ -245,3 +250,8 @@ func _on_primed_timer_timeout():
 	state_transition(simon_state, States.ACTIVE)
 	monster_pos = (monster_pos + randi_range(1,3)) % 4
 	simon.anim_update(player_pos, monster_pos)
+
+
+func _on_difficulty_increase_timeout():
+	if simonMoveTime > 0.75:
+		simonMoveTime -= 0.5
