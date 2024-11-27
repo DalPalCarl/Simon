@@ -81,6 +81,7 @@ func anim_update(p_pos, s_pos):
 		elif s_pos == p_pos: #primer
 			self.position = bed_primer.position
 			self.rotation = bed_primer.global_rotation
+			get_parent().bedCue.play()
 			anim_player.play("bed_onBed")
 		else:
 			self.position = bed_opp.position

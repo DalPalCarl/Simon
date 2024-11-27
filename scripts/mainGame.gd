@@ -20,6 +20,11 @@ signal jumpscare
 @onready var bed = $CornerPositions/Bed
 @onready var closet = $CornerPositions/Closet
 
+@onready var bedCue : AudioStreamPlayer3D = $Bed
+@onready var bsCue : AudioStreamPlayer3D = $Bookshelf
+@onready var cCue : AudioStreamPlayer3D = $Closet
+@onready var cornerCue : AudioStreamPlayer3D = $BackCorner
+
 @onready var mvmtTimer : Timer = $MovementTimer
 var simonMoveTime : float = 6.0
 @onready var difficultyIncTimer : Timer = $DifficultyIncrease
@@ -253,5 +258,5 @@ func _on_primed_timer_timeout():
 
 
 func _on_difficulty_increase_timeout():
-	if simonMoveTime > 0.75:
+	if simonMoveTime > 2.0:
 		simonMoveTime -= 0.5
