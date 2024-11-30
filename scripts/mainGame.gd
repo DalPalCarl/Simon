@@ -107,7 +107,7 @@ func state_transition(prev_state : States, new_state : States):
 			primedTimer.stop()
 			drone.stop()
 			hideMButtons()
-			if randf() >= 0:
+			if randf() >= 0.25:
 				mvmtTimer.stop()
 				memory_game.special_scare()
 				dead = true
